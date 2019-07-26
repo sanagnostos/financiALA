@@ -14,6 +14,7 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { DealershipComponent } from './dealership/dealership.component';
 import { CarsComponent } from './cars/cars.component';
 import { FinanceComponent } from './finance/finance.component';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { FinanceComponent } from './finance/finance.component';
     NavBarComponent,
     DealershipComponent,
     CarsComponent,
-    FinanceComponent
+    FinanceComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
