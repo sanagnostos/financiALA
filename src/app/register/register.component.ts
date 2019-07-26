@@ -9,6 +9,10 @@ export class RegisterComponent implements OnInit {
 
   constructor() { }
 
+  onRegIn() {
+    alert("Register in button activated!")
+  }
+
   ngOnInit() {
   }
 
