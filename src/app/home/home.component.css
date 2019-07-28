@@ -1,11 +1,18 @@
-.ngb-carousel{
+/* .ngb-carousel{
     height: 300px;
     width: 100%;
-}
+} */
 .picsum-img-wrapper{
+    display: flex;
     width: 100%;
+    margin: auto;
+    justify-content: center;
 }
 img{
-    width: 100%;
-    height:500px; 
+    width: 80%;
+    height: auto; 
+}
+.carousel-caption{
+    color:white;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
