@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatInputModule, MatCardModule, MatButtonModule, } from '@angular/material'
 import { MatSelectModule } from '@angular/material/select'
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
 
 import { AppRoutingModule } from './app-routing.module';
 import { MaterialModule } from './material.module';
@@ -15,6 +16,7 @@ import { DealershipComponent } from './dealership/dealership.component';
 import { CarsComponent } from './cars/cars.component';
 import { FinanceComponent } from './finance/finance.component';
 import { AboutComponent } from './about/about.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,8 @@ import { AboutComponent } from './about/about.component';
     DealershipComponent,
     CarsComponent,
     FinanceComponent,
-    AboutComponent
+    AboutComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +39,8 @@ import { AboutComponent } from './about/about.component';
     MatInputModule,
     MatCardModule,
     MatButtonModule,
-    MatSelectModule
+    MatSelectModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
