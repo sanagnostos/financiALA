@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatInputModule, MatCardModule, MatButtonModule, } from '@angular/material'
+import { MatInputModule, MatCardModule, MatButtonModule, MatGridListModule} from '@angular/material'
 import { MatSelectModule } from '@angular/material/select'
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
 
@@ -40,7 +40,8 @@ import { FooterComponent } from './footer/footer.component';
     MatCardModule,
     MatButtonModule,
     MatSelectModule,
-    NgbModule
+    NgbModule,
+    MatGridListModule
   ],
   providers: [],
   bootstrap: [AppComponent]
