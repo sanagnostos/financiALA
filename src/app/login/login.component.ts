@@ -12,6 +12,9 @@ export class LoginComponent implements OnInit {
   onLogIn() {
     alert("Log in button activated!")
   }
+  onRegister() {
+    
+  }
 
   ngOnInit() {
   }
