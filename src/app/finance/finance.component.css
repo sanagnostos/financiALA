@@ -1,0 +1,13 @@
+mat-card {
+    width: 30%;
+    margin: auto;
+    text-align: center;
+    margin-top: 2rem;
+}
+p {
+    padding-right: 5px;
+}
+
+mat-slider {
+    width: 300px;
+  }
