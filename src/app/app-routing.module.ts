@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
@@ -8,6 +8,7 @@ import { CarsComponent } from './cars/cars.component';
 import { FinanceComponent } from './finance/finance.component';
 import { DealershipComponent } from './dealership/dealership.component';
 import { AboutComponent } from './about/about.component';
+import { LoggedFinanceComponent } from './logged-finance/logged-finance.component';
 
 
 const routes: Routes = [{
@@ -37,6 +38,11 @@ const routes: Routes = [{
 {
   path: 'about',
   component: AboutComponent
+},
+{
+  path: 'loggedF',
+  component: LoggedFinanceComponent
+  
 }];
 
 @NgModule({
