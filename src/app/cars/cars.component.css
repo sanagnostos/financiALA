@@ -1,0 +1,32 @@
+
+
+#wrapper{
+    justify-content: center;
+    display: block;
+    margin: auto;
+}
+
+#filter-bar{
+    border: 1px solid red;
+    height: 100px;
+    width: 75%;
+    margin: auto;
+}
+
+#content-grid{
+    border: 1px solid gray;
+    height: auto;
+    width: 75%;
+    margin: auto;
+}
+.mdc-image-list_item{
+    height: auto;
+    width: 20%;
+    padding: 4rem;
+}
+
+.my-image-list{
+    @include mdc-image-list-standard-coliumns(4);
+    max-width: 80%;
+    margin: auto;
+}

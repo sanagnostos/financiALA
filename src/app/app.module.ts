@@ -1,13 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-<<<<<<< HEAD
-import { MatInputModule, MatCardModule, MatButtonModule, MatSliderModule, } from '@angular/material'
-=======
-import { MatInputModule, MatCardModule, MatButtonModule, MatGridListModule} from '@angular/material'
->>>>>>> 6615abba7a1f0ae0fb4242ada228b8efa9570c33
-import { MatSelectModule } from '@angular/material/select'
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
+import { MatInputModule, MatCardModule, MatButtonModule, MatSliderModule, MatGridListModule,} from '@angular/material';
+import { MatSelectModule } from '@angular/material/select';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+// import "@material/image-list/mdc-image-list";
 
 import { AppRoutingModule } from './app-routing.module';
 import { MaterialModule } from './material.module';
@@ -45,11 +42,8 @@ import { FooterComponent } from './footer/footer.component';
     MatButtonModule,
     MatSelectModule,
     NgbModule,
-<<<<<<< HEAD
     MatSliderModule,
-=======
     MatGridListModule
->>>>>>> 6615abba7a1f0ae0fb4242ada228b8efa9570c33
   ],
   providers: [],
   bootstrap: [AppComponent]
