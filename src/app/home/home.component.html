@@ -1,0 +1,61 @@
+<div id="wrapper">
+  <div id="carousel">
+    <ngb-carousel >
+      <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+          <img src="/assets/images/image.jpg" alt="Random first slide">
+        </div>
+        <div class="carousel-caption">
+          <h3>First slide label</h3>
+        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+        </div>
+      </ng-template>
+      <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+          <img src="/assets/images/kinky.jpg" alt="Random second slide">
+        </div>
+        <div class="carousel-caption">
+          <h3>Second slide label</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+      </ng-template>
+      <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+          <img src="/assets/images/porsche.jpg" alt="Random third slide">
+        </div>
+        <div class="carousel-caption">
+          <h3>Third slide label</h3>
+          <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+        </div>
+      </ng-template>
+    </ngb-carousel>
+  </div><!--close carousel-->
+  <div id="content">
+    <mat-grid-list cols="3" rowHeight="1:1" gutterSize="30" mat-grid-tile-header="true" mat-grid-tile-footer="true">
+      <mat-grid-tile id="LocationTile">
+        <mat-grid-tile-header>
+          <h3>location header</h3>
+        </mat-grid-tile-header>
+        <mat-grid-tile-footer>
+          <button>button</button>
+        </mat-grid-tile-footer>
+      </mat-grid-tile>
+      <mat-grid-tile id="CarTile">
+          <mat-grid-tile-header>
+              <h3>Car header</h3>
+            </mat-grid-tile-header>
+            <mat-grid-tile-footer>
+              <button>button</button>
+            </mat-grid-tile-footer>
+      </mat-grid-tile>
+      <mat-grid-tile id="FinanceTile">
+          <mat-grid-tile-header>
+              <h3>Calculator header</h3>
+            </mat-grid-tile-header>
+            <mat-grid-tile-footer>
+              <button>button</button>
+            </mat-grid-tile-footer>
+      </mat-grid-tile>
+    </mat-grid-list>      
+  </div><!--close content-->
+</div><!--close wrapper-->
