@@ -2,23 +2,23 @@
         <h1 align="center">Calculator</h1><br>
         Credit Score:
         <select>
-            <option value="Providence" >100</option>
-            <option value="Boston">200</option>
-            <option value="New Bedford">300</option>
+            <option value="Providence" >300 - 500</option>
+            <option value="Boston">501 - 600</option>
+            <option value="New Bedford">601 - 660</option>
+            <option value="New Bedford">661 - 780</option>
+            <option value="New Bedford">781 - 850</option>
         </select>
         <br ><br >
         Cost:
 <mat-slider thumbLabel [displayWith]="formatLabel" tickInterval="1000" min="1" max="100000"></mat-slider><br>
 <br><br>
-    Monthly Payment:<input type="text" name="Monthly"><br><br>
-    Interest Rate:<input type="text" name="APR"><br><br>
-    Total Amount:<input type="text" name="Amount"><br><br>
-    Total Interest:<input type="text" name="Interest"><br><br>
+    Monthly Payment:<input class="form-control" type="text" name="Monthly">
+    Interest Rate:<input class="form-control" type="text" name="APR">
+    Total Amount:<input class="form-control" type="text" name="Amount">
+    Total Interest:<input class="form-control" type="text" name="Interest"><br>
     <button mat-raised-button color="primary" (click)="onLogIn()">Submit</button>
-
-
- 
 </mat-card>
+
 
 <!--<mat-card>
     <h1 align="center">Calculator</h1>

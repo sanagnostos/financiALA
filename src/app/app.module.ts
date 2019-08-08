@@ -18,6 +18,7 @@ import { CarsComponent } from './cars/cars.component';
 import { FinanceComponent } from './finance/finance.component';
 import { AboutComponent } from './about/about.component';
 import { FooterComponent } from './footer/footer.component';
+import { LoggedFinanceComponent } from './logged-finance/logged-finance.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { FooterComponent } from './footer/footer.component';
     CarsComponent,
     FinanceComponent,
     AboutComponent,
-    FooterComponent
+    FooterComponent,
+    LoggedFinanceComponent
   ],
   imports: [
     BrowserModule,
