@@ -3,7 +3,7 @@ mat-slider {
     width: 200px;
   }
   .CardDivL{
-  
+    border: 2px solid black;
     width: 30%;
     margin: auto;
     text-align: center;
@@ -11,9 +11,9 @@ mat-slider {
     margin-top: 2rem;
     margin-bottom: 2rem;
     float: left;
+    background-color: whitesmoke ;
   }
   .CardDivR{
-    
     width: 30%;
     margin: auto;
     text-align: center;
@@ -21,6 +21,7 @@ mat-slider {
     margin-top: 2rem;
     margin-bottom: 2rem;
     float: right;
+    background-color: whitesmoke;
   }
   p {
     padding-right: 5px;

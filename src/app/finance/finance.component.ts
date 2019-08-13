@@ -1,8 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-<<<<<<< HEAD
-=======
 import { FormGroup, FormControl } from '@angular/forms';
->>>>>>> a2db6cba6106eb96741c6c699610b7f011e7207f
 
 @Component({
   selector: 'app-finance',
@@ -10,8 +7,6 @@ import { FormGroup, FormControl } from '@angular/forms';
   styleUrls: ['./finance.component.css']
 })
 export class FinanceComponent implements OnInit {
-<<<<<<< HEAD
-=======
 
   profileForm = new FormGroup({
     Monthly: new FormControl(''),
@@ -19,7 +14,6 @@ export class FinanceComponent implements OnInit {
     Amount: new FormControl(''),
     TotalI: new FormControl(''),
   });
->>>>>>> a2db6cba6106eb96741c6c699610b7f011e7207f
   formatLabel(value: number | null) {
     if (!value) {
       return 0;
@@ -28,21 +22,14 @@ export class FinanceComponent implements OnInit {
     if (value >= 1000) {
       return Math.round(value / 1000) + 'k';
     }
-<<<<<<< HEAD
-
-    return value;
-=======
     
     return value;
     
->>>>>>> a2db6cba6106eb96741c6c699610b7f011e7207f
   }
   constructor() { }
 
   ngOnInit() {
   }
-<<<<<<< HEAD
-=======
   onSubmit() {
     // TODO: Use EventEmitter with form value
     var M = this.profileForm.get('Monthly').value;
@@ -65,6 +52,5 @@ console.log(M)
       console.log(this.selecteditem = event.target.value)
 
   }
->>>>>>> a2db6cba6106eb96741c6c699610b7f011e7207f
 
 }

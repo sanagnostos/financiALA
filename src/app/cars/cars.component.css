@@ -1,10 +1,6 @@
 
 
-#wrapper{
-    justify-content: center;
-    margin: auto; 
-    background: url("src/assets/images/bg.png") ;
-}
+
 
 #filter-bar{
     border: 1px solid red;

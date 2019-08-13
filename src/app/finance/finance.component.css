@@ -2,8 +2,10 @@ mat-card {
     width: 30%;
     margin: auto;
     text-align: center;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+    padding-top: 2rem;
+    /* margin-bottom: 2rem;  */
+    /* background: url("src/assets/images/bg.png") ; */
+    background-color: whitesmoke;
 }
 p {
     padding-right: 5px;

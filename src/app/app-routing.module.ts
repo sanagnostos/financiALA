@@ -16,11 +16,7 @@ const routes: Routes = [{
   component: HomeComponent
 },
 {
-<<<<<<< HEAD
-  path: 'register',
-=======
   path: 'user',
->>>>>>> a2db6cba6106eb96741c6c699610b7f011e7207f
   component: RegisterComponent
 },
 {

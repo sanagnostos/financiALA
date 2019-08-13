@@ -27,6 +27,7 @@ mat-grid-tile{
 #content{
     width: 80%;
     margin: auto;
+    background: url("src/assets/images/bg.png") ;
 }
 
 mat-grid-tile-header{
@@ -49,5 +50,5 @@ mat-grid-tile-footer{
     justify-content: center;
 }
 #wrapper{
-    background: url(/src/assets/images/bg.png);
+    padding-top: 0;
 }
