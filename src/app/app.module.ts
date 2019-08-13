@@ -20,6 +20,8 @@ import { FinanceComponent } from './finance/finance.component';
 import { AboutComponent } from './about/about.component';
 import { FooterComponent } from './footer/footer.component';
 import { LoggedFinanceComponent } from './logged-finance/logged-finance.component';
+import { UserService } from './user.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -48,9 +50,10 @@ import { LoggedFinanceComponent } from './logged-finance/logged-finance.componen
     MatSliderModule,
     MatGridListModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [ UserService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
