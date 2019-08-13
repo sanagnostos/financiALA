@@ -1,0 +1,31 @@
+
+mat-slider {
+    width: 200px;
+  }
+  .CardDivL{
+  
+    width: 30%;
+    margin: auto;
+    text-align: center;
+    margin-left: 15rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    float: left;
+  }
+  .CardDivR{
+    
+    width: 30%;
+    margin: auto;
+    text-align: center;
+    margin-right: 15rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    float: right;
+  }
+  p {
+    padding-right: 5px;
+}
+.texta{
+    text-align: center;
+    margin: 0 auto;
+}
