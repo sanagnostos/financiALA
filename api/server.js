@@ -2,7 +2,7 @@
 const express = require('express');
     path = require('path');
     bodyParser = require('body-parser');
- //   cors = require('cors'),
+    cors = require('cors'),
     mongoose = require('mongoose');
     config = require('./DB');
     const userRoute = require('./routes/user.route')
@@ -15,7 +15,7 @@ const express = require('express');
 
     const app = express();
     app.use(bodyParser.json());
-   // app.use(cors());
+    app.use(cors());
    app.use('/user', userRoute);
     const port = process.env.PORT || 4000;
 
