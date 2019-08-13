@@ -1,15 +1,5 @@
 <div id="wrapper">
 <mat-card>
-<<<<<<< HEAD
-        <h1 align="center">Calculator</h1><br>
-        Credit Score:
-        <select>
-            <option value="Providence" >300 - 500</option>
-            <option value="Boston">501 - 600</option>
-            <option value="New Bedford">601 - 660</option>
-            <option value="New Bedford">661 - 780</option>
-            <option value="New Bedford">781 - 850</option>
-=======
     <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
         <h1 align="center">Calculator</h1><br>
         Credit Score:
@@ -26,26 +16,17 @@
             <option value="24" >2 Years</option>
             <option value="36">3 Years</option>
             <option value="48">4 Years</option>
->>>>>>> a2db6cba6106eb96741c6c699610b7f011e7207f
         </select>
         <br ><br >
         Cost:
 <mat-slider thumbLabel [displayWith]="formatLabel" tickInterval="1000" min="1" max="100000"></mat-slider><br>
 <br><br>
-<<<<<<< HEAD
-    Monthly Payment:<input class="form-control" type="text" name="Monthly">
-    Interest Rate:<input class="form-control" type="text" name="APR">
-    Total Amount:<input class="form-control" type="text" name="Amount">
-    Total Interest:<input class="form-control" type="text" name="Interest"><br>
-    <button mat-raised-button color="primary" (click)="onLogIn()">Submit</button>
-=======
     Monthly Payment:<input class="form-control" type="text" formControlName="Monthly">
     Interest Rate:<input class="form-control" type="text" formControlName="Interest">
     Total Amount:<input class="form-control" type="text" formControlName="Amount">
     Total Interest:<input class="form-control" type="text" formControlName="TotalI"><br>
-    <button type="submit" [disabled]="!profileForm.valid">Submit</button>
+    <button mat-raised-button type="submit" [disabled]="!profileForm.valid">Submit</button>
     </form>
->>>>>>> a2db6cba6106eb96741c6c699610b7f011e7207f
 </mat-card>
 </div>
 
