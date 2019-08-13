@@ -20,7 +20,7 @@ export class UserService {
       location: location
     };
     console.log(obj);
-    this.http.post('${this.uri}/add', obj)
+    this.http.post(`${this.uri}/add`, obj)
     .subscribe(res => console.log('Done'))
   }
 }

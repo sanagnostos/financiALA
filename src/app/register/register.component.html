@@ -5,7 +5,7 @@
     <form [formGroup]="angForm" novalidate>
         <div class="form-group">
             <label class="col-md-4">First Name:</label>
-            <input type="text" class="form-control" formControlName="first_name">
+            <input type="text" class="form-control" formControlName="first_name" #first_name>
           </div>
           <div *ngIf="angForm.controls['first_name'].invalid && (angForm.controls['first_name'].dirty || angForm.controls['first_name'].touched)" class="alert alert-danger">
             <div *ngIf="angForm.controls['first_name'].errors.required">
@@ -14,7 +14,7 @@
           </div>
           <div class="form-group">
               <label class="form-group">Last Name:</label>
-              <input type="text" class="form-control" formControlName="last_name">
+              <input type="text" class="form-control" formControlName="last_name" #last_name>
           </div>  
           <div *ngIf="angForm.controls['last_name'].invalid && (angForm.controls['last_name'].dirty || angForm.controls['last_name'].touched)" class="alert alert-danger">
               <div *ngIf="angForm.controls['last_name'].errors.required">
@@ -24,7 +24,7 @@
   
           <div class="form-group">
             <label class="form-group">Email:</label>
-            <input type="email" class="form-control" formControlName="email">
+            <input type="email" class="form-control" formControlName="email" #email>
           </div>
           <div *ngIf="angForm.controls['email'].invalid && (angForm.controls['email'].dirty || angForm.controls['email'].touched)" class="alert alert-danger">
               <div *ngIf="angForm.controls['email'].errors.required">
@@ -34,7 +34,7 @@
 
           <div class="form-group">
             <label class="form-group">Password:</label>
-            <input type="password" class="form-control" formControlName="password">
+            <input type="password" class="form-control" formControlName="password" #password>
           </div>
           <div *ngIf="angForm.controls['password'].invalid && (angForm.controls['password'].dirty || angForm.controls['password'].touched)" class="alert alert-danger">
               <div *ngIf="angForm.controls['password'].errors.required">
@@ -52,9 +52,9 @@
               </div>
             </div>
 
-            <input id="rank" name="rank" type="hidden" value=1 id="rank">
+            <input id="rank" name="rank" type="hidden" value=1 id="rank" #rank>
     
-            <input id="location"  name="location" type="hidden" value=1 id="location">
+            <input id="location"  name="location" type="hidden" value=1 id="location" #location>
             
             <br>
            <!-- <div class="form-group">
@@ -63,15 +63,16 @@
                     [disabled]="angForm.pristine || angForm.invalid" 
                     class="btn btn-primary">Register</button>
                               </div>            </div>-->
+          <div class="form-group">
+            <button (click)="addUser(first_name.value, last_name.value, email.value, password.value, rank.value, location.value)"
+                [disabled]="angForm.pristine || angForm.invalid" 
+                class="btn btn-primary">
+                Register
+              </button>
+        </div>
             
     </form>
   </div>
 </div>
 
-<div class="form-group">
-    <button (click)="addUser(first_name.value, last_name.value, email.value, password.value, rank.value, location.value)"
-        [disabled]="angForm.pristine || angForm.invalid" 
-        class="btn btn-primary">
-        Register
-      </button>
-</div>
+
