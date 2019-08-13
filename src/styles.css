@@ -5,9 +5,12 @@ SPACING/SIZING
 COLOR SCHEME
 
 */
+
+
 body {
     margin: 0;
-    background-color: dimgray
+    background-color: dimgray;
+
 }
 
 .spacer {
@@ -16,6 +19,7 @@ body {
 
 .carousel-inner {
     overflow: visible;
+    background-color: gray;
 }
 
 .carousel-item {
@@ -25,6 +29,7 @@ body {
     transition: opacity 1.2s ease-in-out, visibility 1.2s;
     z-index: -1;
     position: absolute;
+    background-color: gray;
 }
 
 .carousel-item.active{
@@ -32,6 +37,7 @@ body {
     visibility: visible;
     transition: opacity 1.2s ease-in-out, visibility 1.2s;
     z-index: 10;
+    background-color: gray;
 }
 
 a.carousel-control-prev {
@@ -59,10 +65,5 @@ a.carousel-control-next {
    z-index: 30;
  }
 
- #carousel{
 
- }
-
- #content{
-
- }
+ 

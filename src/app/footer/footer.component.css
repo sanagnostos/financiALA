@@ -2,3 +2,10 @@ img{
     width: 25px;
     height: 25px; 
 }
+mat-toolbar{
+    background-image: linear-gradient(to right, #27BCFF, black);
+    /* margin-top: 2rem; */
+}
+button{
+    color: white;
+}
