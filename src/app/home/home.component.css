@@ -18,7 +18,8 @@ img{
 }
 
 mat-grid-tile{
-    background-color: blue;
+    background-color: #0F4962;
+    
     display: flexbox;
     flex-direction: column;
     height: 100%;
@@ -27,26 +28,25 @@ mat-grid-tile{
 #content{
     width: 80%;
     margin: auto;
-    background: url("src/assets/images/bg.png") ;
+    background-color: rgba(0,0,0,0);
 }
 
-mat-grid-tile-header{
+.mat-grid-tile-header{
     height: 25%;
+    background-color: #0F4962;
     justify-content: center;
     width: 100%;
-    border: 1px solid green;
 }
 
 .tileContent{
     height: 50%;
     width: 100%;
-    border: 1px solid green;
 }
 
-mat-grid-tile-footer{
+.mat-grid-tile-footer{
     height: 25%;
+    background-color: #0F4962;
     width: 100%;
-    border: 1px solid green;
     justify-content: center;
 }
 #wrapper{

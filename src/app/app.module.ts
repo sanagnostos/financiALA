@@ -23,6 +23,7 @@ import { LoggedFinanceComponent } from './logged-finance/logged-finance.componen
 import { UserService } from './user.service';
 import { LoginService } from './login.service';
 import { HttpClientModule } from '@angular/common/http';
+import { CrudInventoryComponent } from './crud-inventory/crud-inventory.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { HttpClientModule } from '@angular/common/http';
     FinanceComponent,
     AboutComponent,
     FooterComponent,
-    LoggedFinanceComponent
+    LoggedFinanceComponent,
+    CrudInventoryComponent
   ],
   imports: [
     BrowserModule,
