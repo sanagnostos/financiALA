@@ -13,7 +13,7 @@ export class CarService {
   addCar(make, model, year, dealer, price) {
     const obj = {
       make: make,
-      mdoel: model,
+      model: model,
       year: year,
       dealer: dealer,
       price: price
