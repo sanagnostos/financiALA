@@ -1,5 +1,6 @@
 mat-toolbar{
-    background-image: linear-gradient(to right, #27BCFF, black);
+    /* background-image: linear-gradient(to right, #27BCFF, black); */
+    background-color: #27BCFF;
 }
 button{
 color: white;

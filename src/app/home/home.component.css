@@ -27,7 +27,7 @@ mat-grid-tile{
 #content{
     width: 80%;
     margin: auto;
-    background: url("src/assets/images/bg.png") ;
+    background-color: rgba(0,0,0,0);
 }
 
 mat-grid-tile-header{
