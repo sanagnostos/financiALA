@@ -9,6 +9,7 @@ import { FinanceComponent } from './finance/finance.component';
 import { DealershipComponent } from './dealership/dealership.component';
 import { AboutComponent } from './about/about.component';
 import { LoggedFinanceComponent } from './logged-finance/logged-finance.component';
+import { CrudInventoryComponent } from './crud-inventory/crud-inventory.component';
 
 
 const routes: Routes = [{
@@ -43,6 +44,10 @@ const routes: Routes = [{
   path: 'loggedF',
   component: LoggedFinanceComponent
   
+},
+{
+  path:"crudi",
+  component: CrudInventoryComponent
 }];
 
 @NgModule({
