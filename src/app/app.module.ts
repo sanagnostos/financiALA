@@ -22,6 +22,7 @@ import { FooterComponent } from './footer/footer.component';
 import { LoggedFinanceComponent } from './logged-finance/logged-finance.component';
 import { UserService } from './user.service';
 import { HttpClientModule } from '@angular/common/http';
+import { CrudInventoryComponent } from './crud-inventory/crud-inventory.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { HttpClientModule } from '@angular/common/http';
     FinanceComponent,
     AboutComponent,
     FooterComponent,
-    LoggedFinanceComponent
+    LoggedFinanceComponent,
+    CrudInventoryComponent
   ],
   imports: [
     BrowserModule,
