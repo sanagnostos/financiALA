@@ -6,6 +6,7 @@ const express = require('express');
     mongoose = require('mongoose');
     config = require('./DB');
     const userRoute = require('./routes/user.route')
+    const carRoute = require('./routes/car.route')
 
     mongoose.Promise = global.Promise;
     mongoose.connect(config.DB, { useNewUrlParser: true }).then(
@@ -17,6 +18,7 @@ const express = require('express');
     app.use(bodyParser.json());
     app.use(cors());
    app.use('/user', userRoute);
+   app.use('/car', carRoute);
   const port = process.env.PORT || 4000;
 
 

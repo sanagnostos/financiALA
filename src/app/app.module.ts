@@ -22,6 +22,7 @@ import { FooterComponent } from './footer/footer.component';
 import { LoggedFinanceComponent } from './logged-finance/logged-finance.component';
 import { UserService } from './user.service';
 import { LoginService } from './login.service';
+import { CarService } from './car.service';
 import { HttpClientModule } from '@angular/common/http';
 import { CrudInventoryComponent } from './crud-inventory/crud-inventory.component';
 
@@ -56,7 +57,7 @@ import { CrudInventoryComponent } from './crud-inventory/crud-inventory.componen
     FormsModule,
     HttpClientModule
   ],
-  providers: [ LoginService, UserService ],
+  providers: [ LoginService, UserService, CarService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
