@@ -21,6 +21,7 @@ import { AboutComponent } from './about/about.component';
 import { FooterComponent } from './footer/footer.component';
 import { LoggedFinanceComponent } from './logged-finance/logged-finance.component';
 import { UserService } from './user.service';
+import { LoginService } from './login.service';
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
@@ -53,7 +54,7 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     HttpClientModule
   ],
-  providers: [ UserService ],
+  providers: [ LoginService, UserService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

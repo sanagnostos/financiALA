@@ -7,6 +7,8 @@ mat-card {
 p {
     padding-right: 5px;
 }
-div {
-    float: right;
+
+.card-1 {
+    margin: 0 auto;
+     width: 35%;
 }
