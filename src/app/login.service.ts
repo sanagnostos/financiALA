@@ -20,9 +20,14 @@ export class LoginService {
     this.http.post(`${this.uri}/login`, obj)
     .subscribe(res => {
       if(res['status']) {
+        console.log(res['status'])
+        console.log(obj.email + " is logged in")
+        alert("Log in " + res['status'])
         this.router.navigateByUrl('/loggedF')
-      } else {
-
+      } if(res['status'] == false) {
+        console.log("Log in fail");
+        console.log(res)
+        alert("log in fail: " + res['status'])
       }
     })
   }

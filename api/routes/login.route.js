@@ -16,9 +16,9 @@ loginRoute.route('/LogIn').post(function (req, res) {
             res.status(200).json({
                 "status": true})
         } else {
+            req.session.user = doc;
             res.status(401).json({
                 "status": false})
-            res.end();
         }
 
     });
