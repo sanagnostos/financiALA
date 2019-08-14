@@ -19,7 +19,7 @@ body {
 
 .carousel-inner {
     overflow: visible;
-    background: url("src/assets/images/bg.png") ;
+    background-color: rgba(0,0,0,0);
 }
 
 .carousel-item {
@@ -40,13 +40,13 @@ body {
 
 a.carousel-control-prev {
      z-index: 15;
-     background: url("src/assets/images/bg.png") ;
+     background-color: rgba(0,0,0,0);
      width: 10%;
 }
 
 a.carousel-control-next {
     z-index: 15;
-    background: url("src/assets/images/bg.png") ;
+    background-color: rgba(0,0,0,0);
      width: 10%;
 }
 
@@ -55,7 +55,7 @@ a.carousel-control-next {
 }
 
 .carousel-control-prev-icon{
-    background-image: url('https://apufpel.com.br/assets/img/seta_prim.png');
+    background-color: rgba(0,0,0,0);
     z-index: 30;
  }
  .carousel-control-next-icon{
@@ -67,7 +67,8 @@ a.carousel-control-next {
  /* overflow: hidden; */
  /* position: relative; */
  padding-bottom: 100px; /* height of your footer */
- background: url("src/assets/images/bg.png") ;
+ /* background: url("src/assets/images/bg.png") ; */
+ background-image: linear-gradient(#27BCFF, black);
  padding-top:2rem;
  }
 
