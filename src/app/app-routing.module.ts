@@ -10,6 +10,8 @@ import { DealershipComponent } from './dealership/dealership.component';
 import { AboutComponent } from './about/about.component';
 import { LoggedFinanceComponent } from './logged-finance/logged-finance.component';
 import { CrudInventoryComponent } from './crud-inventory/crud-inventory.component';
+import { UserInfoComponent } from './user-info/user-info.component'
+import { DealershipInfoComponent } from './dealership-info/dealership-info.component'
 
 
 const routes: Routes = [{
@@ -48,7 +50,16 @@ const routes: Routes = [{
 {
   path:"crudi",
   component: CrudInventoryComponent
-}];
+},
+{
+  path:"userInfo",
+  component: UserInfoComponent
+},
+{
+  path:"dealershipInfo",
+  component: DealershipInfoComponent
+}
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes), NgbModule],
