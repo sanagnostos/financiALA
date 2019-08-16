@@ -25,6 +25,8 @@ import { LoginService } from './login.service';
 import { CarService } from './car.service';
 import { HttpClientModule } from '@angular/common/http';
 import { CrudInventoryComponent } from './crud-inventory/crud-inventory.component';
+import { DealershipInfoComponent } from './dealership-info/dealership-info.component';
+import { UserInfoComponent } from './user-info/user-info.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,9 @@ import { CrudInventoryComponent } from './crud-inventory/crud-inventory.componen
     AboutComponent,
     FooterComponent,
     LoggedFinanceComponent,
-    CrudInventoryComponent
+    CrudInventoryComponent,
+    DealershipInfoComponent,
+    UserInfoComponent
   ],
   imports: [
     BrowserModule,
