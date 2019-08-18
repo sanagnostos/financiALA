@@ -5,6 +5,7 @@ import { CarService } from '../car.service';
 
 
 
+
 const ELEMENT_DATA: PeriodicElement[] = [
   {position: 1, Make: 'Hydrogen', Model: 'A', Year: 'H',Price: 1.00},
   {position: 2, Make: 'Helium', Model: 'A', Year: 'He', Price: 1.00},
@@ -24,7 +25,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
   styleUrls: ['./crud-inventory.component.css']
 })
 export class CrudInventoryComponent implements OnInit {
-
+  cars: CarService[];
   angForm: FormGroup;
   constructor(private fb: FormBuilder, private cs: CarService) {
     this.createForm();
@@ -40,21 +41,25 @@ export class CrudInventoryComponent implements OnInit {
     });
   }
   addCar(make, model, year, price, dealer, ) {
- /*   console.log("DATA CHECK!");
-    console.log("make: " + make)
-    console.log("model: " + model)
-    console.log("year: " + year)
-    console.log("dealer: " + dealer)
-    console.log("price: " + price)*/
-
     this.cs.addCar(make, model, year, dealer, price)
   }
 
 
   ngOnInit() {
+    this.cs
+      .getCar()
+      .subscribe((data: CarService[]) => {
+        this.cars = data;
+        console.log(this.cars)
+     //   console.log(ELEMENT_DATA)
+      })
+
   }
   displayedColumns: string[] = ['position', 'Make', 'Model', 'Year', 'Price'];
-  dataSource = ELEMENT_DATA;
+  //console.log(this.cars)
+ // console.log(ELEMENT_DATA)
+  dataSource = this.cars;
+
 }
 
 export interface PeriodicElement {

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 
 @Injectable({
   providedIn: 'root'
@@ -24,7 +25,9 @@ export class LoginService {
         console.log(obj.email + " is logged in")
         alert("Log in " + res['status'])
         this.router.navigateByUrl('/loggedF')
-      } if(res['status'] == false) {
+       this.router.navigate(['/home', obj.email])
+      } else {
+        document.getElementById("error").innerText = "Log In Fail";
         console.log("Log in fail");
         console.log(res)
         alert("log in fail: " + res['status'])

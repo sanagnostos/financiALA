@@ -10,6 +10,7 @@ import { DealershipComponent } from './dealership/dealership.component';
 import { AboutComponent } from './about/about.component';
 import { LoggedFinanceComponent } from './logged-finance/logged-finance.component';
 import { CrudInventoryComponent } from './crud-inventory/crud-inventory.component';
+import { CustomerHomeComponent } from './customer-home/customer-home.component';
 
 
 const routes: Routes = [{
@@ -48,6 +49,10 @@ const routes: Routes = [{
 {
   path:"crudi",
   component: CrudInventoryComponent
+},
+{
+  path:"home",
+  component: CustomerHomeComponent
 }];
 
 @NgModule({

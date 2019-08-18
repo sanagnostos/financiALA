@@ -25,6 +25,7 @@ import { LoginService } from './login.service';
 import { CarService } from './car.service';
 import { HttpClientModule } from '@angular/common/http';
 import { CrudInventoryComponent } from './crud-inventory/crud-inventory.component';
+import { CustomerHomeComponent } from './customer-home/customer-home.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { CrudInventoryComponent } from './crud-inventory/crud-inventory.componen
     AboutComponent,
     FooterComponent,
     LoggedFinanceComponent,
-    CrudInventoryComponent
+    CrudInventoryComponent,
+    CustomerHomeComponent
   ],
   imports: [
     BrowserModule,
