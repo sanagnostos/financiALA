@@ -1,35 +1,35 @@
 
 mat-slider {
-    width: 200px;
-  }
-  table {
-    width: 85%;
-  }
-  .CardDivL{
+  width: 200px;
+}
+table {
+  width: 85%;
+}
+.CardDivL{
+
+  width: 40%;
+  margin: auto;
+  margin-left: 10rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  float: left;
+}
+.CardDivR{
   
-    width: 40%;
-    margin: auto;
-    margin-left: 10rem;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    float: left;
-  }
-  .CardDivR{
-    
-    width: 30%;
-    margin: auto;
-    text-align: center;
-    margin-right: 15rem;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    float: right;
-  }
-  p {
-    padding-right: 5px;
+  width: 30%;
+  margin: auto;
+  text-align: center;
+  margin-right: 15rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  float: right;
+}
+p {
+  padding-right: 5px;
 }
 .texta{
-    text-align: center;
-    margin: 0 auto;
+  text-align: center;
+  margin: 0 auto;
 }
 img{
     width: 150px;
