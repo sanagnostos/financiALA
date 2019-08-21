@@ -31,4 +31,9 @@ export class CarService {
       .http
       .get(`${this.uri}`);
   }
+  deleteCar(id) {
+    return this
+                .http
+                .get(`${this.uri}/delete/${id}`);
+  }
 }

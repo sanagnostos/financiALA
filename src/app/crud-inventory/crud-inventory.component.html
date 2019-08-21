@@ -65,7 +65,7 @@
                 <td>{{ car.price }}</td>
                 <td>
                   <button mat-raised-button color="primary" class="block" (click)="onEdit()">Edit</button>
-                  <button mat-raised-button color="danger" class="block" (click)="onRemove()">Remove</button>
+                  <a (click) = "deleteCar(car._id, car.model)" ><button mat-raised-button color="danger" class="block" (click)="onRemove()">Remove</button></a>
                 </td>
             </tr>
         </tbody>

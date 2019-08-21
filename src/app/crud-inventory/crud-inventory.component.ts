@@ -55,6 +55,11 @@ export class CrudInventoryComponent implements OnInit {
       })
 
   }
+  deleteCar(id, model) {
+    this.cs.deleteCar(id).subscribe(res => {
+      console.log('Deleted ' + model);
+    })
+  }
   displayedColumns: string[] = ['position', 'Make', 'Model', 'Year', 'Price'];
   //console.log(this.cars)
  // console.log(ELEMENT_DATA)
