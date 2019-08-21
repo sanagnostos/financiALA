@@ -3,7 +3,23 @@
     <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
         <h1 align="center">Calculator</h1><br>
         Credit Score:
-        <select>
+        <select (change)="changeCity($event)" formControlName="scoreSelected" >
+            <option value="">choose your credit score</option>
+            <option *ngFor="let score of Score" [value]="score">{{score}}</option>
+        </select>
+        <br /><br/>
+        Length of Months:
+        <select (change)="changeYear($event)" formControlName="yearSelected">
+            <option value="">Select Length of Months</option>
+            <option *ngFor="let month of Month" [value]="month">{{month}}</option>
+        </select>        
+        <br /><br />
+        Sales Tax:<input class="form-control" type="number" formControlName="ST">
+       <!-- <select (change)="changeState($event)" formControlName="stateSelected">
+                <option value="">State</option>
+                <option *ngFor="let state of State" [ngValue]="state">{{state}}</option>
+        </select>-->
+        <!--<select>
             <option value="400" >300 - 500</option>
             <option value="551">501 - 600</option>
             <option value="631">601 - 660</option>
@@ -12,19 +28,21 @@
         </select>
         <br ><br >
         Length of Finance: 
-        <select name="years">
+        <select formControlName="years">
             <option value="24" >2 Years</option>
             <option value="36">3 Years</option>
             <option value="48">4 Years</option>
-        </select>
+        </select>-->
+
+
         <br ><br >
         Cost:
-<mat-slider thumbLabel [displayWith]="formatLabel" tickInterval="1000" min="1" max="100000"></mat-slider><br>
+<mat-slider id="slider" name ="sldier"thumbLabel [displayWith]="formatLabel" tickInterval="1" min="0" max="100000" formControlName="SliderN" ></mat-slider><br> 
 <br><br>
-    Monthly Payment:<input class="form-control" type="text" formControlName="Monthly">
-    Interest Rate:<input class="form-control" type="text" formControlName="Interest">
-    Total Amount:<input class="form-control" type="text" formControlName="Amount">
-    Total Interest:<input class="form-control" type="text" formControlName="TotalI"><br>
+    Monthly Payment:<input class="form-control" type="text" value=""disabled>
+    Interest Rate:<input class="form-control" type="text" value="" disabled >
+    Total Amount:<input class="form-control" type="text" value="" disabled>
+    Total Interest:<input class="form-control" type="text" value="" disabled><br>
     <button mat-raised-button type="submit" [disabled]="!profileForm.valid">Submit</button>
     </form>
 </mat-card>
