@@ -55,7 +55,7 @@ carRoutes.route('/edit/:id').get(function (req, res) {
   
   // Defined delete | remove | destroy route
   carRoutes.route('/delete/:id').get(function (req, res) {
-      Car.findByIdAndRemove({_id: req.params.id}, function(err, car){
+      Car.remove({_id: req.params.id}, function(err, car){
           if(err) res.json(err);
           else res.json('Successfully removed');
       });

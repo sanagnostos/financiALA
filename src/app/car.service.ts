@@ -23,7 +23,7 @@ export class CarService {
     console.log(obj);
     this.http.post(`${this.uri}/add`, obj)
     .subscribe(res => console.log('Done'))
-    window.location.reload();
+  //  window.location.reload();
   //  this.router.navigateByUrl('/crudi')
   }
   getCar() {
@@ -35,5 +35,6 @@ export class CarService {
     return this
                 .http
                 .get(`${this.uri}/delete/${id}`);
+
   }
 }

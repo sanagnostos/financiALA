@@ -25,7 +25,7 @@ export class LoginService {
         console.log(obj.email + " is logged in")
         alert("Log in " + res['status'])
         this.router.navigateByUrl('/loggedF')
-       this.router.navigate(['/home', obj.email])
+       //this.router.navigate(['/home', obj.email])
       } else {
         document.getElementById("error").innerText = "Log In Fail";
         console.log("Log in fail");

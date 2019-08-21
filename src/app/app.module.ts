@@ -25,12 +25,7 @@ import { LoginService } from './login.service';
 import { CarService } from './car.service';
 import { HttpClientModule } from '@angular/common/http';
 import { CrudInventoryComponent } from './crud-inventory/crud-inventory.component';
-<<<<<<< HEAD
 import { CustomerHomeComponent } from './customer-home/customer-home.component';
-=======
-import { DealershipInfoComponent } from './dealership-info/dealership-info.component';
-import { UserInfoComponent } from './user-info/user-info.component';
->>>>>>> bf1118263a9c07cc50dc4fb14f60caedf2d64744
 
 @NgModule({
   declarations: [
@@ -46,12 +41,7 @@ import { UserInfoComponent } from './user-info/user-info.component';
     FooterComponent,
     LoggedFinanceComponent,
     CrudInventoryComponent,
-<<<<<<< HEAD
     CustomerHomeComponent
-=======
-    DealershipInfoComponent,
-    UserInfoComponent
->>>>>>> bf1118263a9c07cc50dc4fb14f60caedf2d64744
   ],
   imports: [
     BrowserModule,

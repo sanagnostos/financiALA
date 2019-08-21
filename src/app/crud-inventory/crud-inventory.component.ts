@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup,  FormBuilder,  Validators } from '@angular/forms';
 import { CarService } from '../car.service';
+import { Router } from '@angular/router';
+
 
 
 
@@ -27,7 +29,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
 export class CrudInventoryComponent implements OnInit {
   cars: CarService[];
   angForm: FormGroup;
-  constructor(private fb: FormBuilder, private cs: CarService) {
+  constructor(private fb: FormBuilder, private cs: CarService, private router: Router) {
     this.createForm();
   }
 
@@ -42,6 +44,7 @@ export class CrudInventoryComponent implements OnInit {
   }
   addCar(make, model, year, price, dealer, ) {
     this.cs.addCar(make, model, year, dealer, price)
+    this.ngOnInit();
   }
 
 
@@ -58,6 +61,10 @@ export class CrudInventoryComponent implements OnInit {
   deleteCar(id, model) {
     this.cs.deleteCar(id).subscribe(res => {
       console.log('Deleted ' + model);
+      this.ngOnInit();
+
+   //   window.location.reload();
+
     })
   }
   displayedColumns: string[] = ['position', 'Make', 'Model', 'Year', 'Price'];
