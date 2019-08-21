@@ -21,8 +21,11 @@ import { AboutComponent } from './about/about.component';
 import { FooterComponent } from './footer/footer.component';
 import { LoggedFinanceComponent } from './logged-finance/logged-finance.component';
 import { UserService } from './user.service';
+import { LoginService } from './login.service';
+import { CarService } from './car.service';
 import { HttpClientModule } from '@angular/common/http';
 import { CrudInventoryComponent } from './crud-inventory/crud-inventory.component';
+import { CustomerHomeComponent } from './customer-home/customer-home.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +40,8 @@ import { CrudInventoryComponent } from './crud-inventory/crud-inventory.componen
     AboutComponent,
     FooterComponent,
     LoggedFinanceComponent,
-    CrudInventoryComponent
+    CrudInventoryComponent,
+    CustomerHomeComponent
   ],
   imports: [
     BrowserModule,
@@ -55,7 +59,7 @@ import { CrudInventoryComponent } from './crud-inventory/crud-inventory.componen
     FormsModule,
     HttpClientModule
   ],
-  providers: [ UserService ],
+  providers: [ LoginService, UserService, CarService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

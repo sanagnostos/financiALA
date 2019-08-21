@@ -7,3 +7,9 @@ mat-card {
 p {
     padding-right: 5px;
 }
+
+.card-1 {
+    margin: 0 auto;
+     width: 35%;
+}
+

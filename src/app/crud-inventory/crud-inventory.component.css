@@ -3,7 +3,9 @@ mat-slider {
     width: 200px;
   }
   table {
-    width: 85%;
+    width: 100%;
+    background-color: rgb(241, 241, 241);
+    margin-right: 10%;
   }
   .CardDivL{
   
