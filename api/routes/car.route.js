@@ -33,15 +33,15 @@ carRoutes.route('/edit/:id').get(function (req, res) {
   
   //  Defined update route
   carRoutes.route('/update/:id').post(function (req, res) {
-      Car.findById(req.params.id, function(err, next, car) {
+      Car.findById(req.params.id, function(err, car) {
       if (!car)
         return next(new Error('Could not load Document'));
       else {
         car.make = req.body.make;
         car.model = req.body.model;
         car.year = req.body.year;
-        car.dealer = req.body.dealer;
         car.price = req.body.price;
+        car.dealer = req.body.dealer;
   
           car.save().then(car => {
             res.json('Update complete');

@@ -20,6 +20,7 @@ import { FinanceComponent } from './finance/finance.component';
 import { AboutComponent } from './about/about.component';
 import { FooterComponent } from './footer/footer.component';
 import { LoggedFinanceComponent } from './logged-finance/logged-finance.component';
+import { EditCarComponent } from './edit-car/edit-car.component';
 import { UserService } from './user.service';
 import { LoginService } from './login.service';
 import { CarService } from './car.service';
@@ -41,7 +42,8 @@ import { CustomerHomeComponent } from './customer-home/customer-home.component';
     FooterComponent,
     LoggedFinanceComponent,
     CrudInventoryComponent,
-    CustomerHomeComponent
+    CustomerHomeComponent,
+    EditCarComponent
   ],
   imports: [
     BrowserModule,

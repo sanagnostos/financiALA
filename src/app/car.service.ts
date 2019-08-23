@@ -37,4 +37,22 @@ export class CarService {
                 .get(`${this.uri}/delete/${id}`);
 
   }
+  editCar(id) {
+    return this
+            .http
+            .get(`${this.uri}/edit/${id}`);
+  }
+  updateCar(make, model, year, price, dealer, id) {
+    const obj = {
+      make: make,
+      model: model, 
+      year: year,
+      price: price,
+      dealer: dealer
+    };
+    this
+        .http
+        .post(`${this.uri}/update/${id}`, obj)
+        .subscribe(res => console.log('Done'));
+  } 
 }

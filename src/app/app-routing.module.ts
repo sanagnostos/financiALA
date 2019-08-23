@@ -11,6 +11,7 @@ import { AboutComponent } from './about/about.component';
 import { LoggedFinanceComponent } from './logged-finance/logged-finance.component';
 import { CrudInventoryComponent } from './crud-inventory/crud-inventory.component';
 import { CustomerHomeComponent } from './customer-home/customer-home.component';
+import { EditCarComponent } from './edit-car/edit-car.component';
 
 
 const routes: Routes = [{
@@ -49,6 +50,10 @@ const routes: Routes = [{
 {
   path:"crudi",
   component: CrudInventoryComponent
+},
+{
+  path: 'edit/:id',
+  component: EditCarComponent
 },
 {
   path:"home",

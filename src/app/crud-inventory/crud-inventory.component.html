@@ -64,7 +64,9 @@
                 <td>{{ car.dealer }}</td>
                 <td>{{ car.price }}</td>
                 <td>
-                  <button mat-raised-button color="primary" class="block" (click)="onEdit()">Edit</button>
+                  <a [routerLink]="['/edit', car._id]" class="btn btn-primary">Edit</a>
+                </td>
+                <td>
                   <a (click) = "deleteCar(car._id, car.model)" ><button mat-raised-button color="danger" class="block" (click)="onRemove()">Remove</button></a>
                 </td>
             </tr>
@@ -103,7 +105,7 @@
   <button (click)="addCar(make.value, model.value, year.value, price.value, dealership.value)"
       [disabled]="angForm.pristine || angForm.invalid" 
       class="btn btn-primary">
-      Register
+      Add
     </button>
 
 </div>
