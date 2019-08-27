@@ -11,6 +11,13 @@ export class FinanceComponent implements OnInit {
 
   Score: any = ['300-500', '501-600', '601-660', '661-780', '781-850']
   Month: any = ['24', '36', '48']
+  A : number = 0
+  apr : number = 0
+  len : number= 0
+  p : number = 0
+  p1 : number = 0
+  i : number = 0
+  ti : number = 0
   /*State: any = ['AL',
   'AK',
   'AZ',
@@ -62,15 +69,15 @@ export class FinanceComponent implements OnInit {
   'WY']*/
 
   profileForm = new FormGroup({
-    //Monthly: new FormControl(''),
+    Monthly: new FormControl(''),
     //Interest: new FormControl(''),
     //Amount: new FormControl(''),
     //TotalI: new FormControl(''),
     scoreSelected: new FormControl(''),
     yearSelected: new FormControl(''),
-    stateSelected: new FormControl(''),
     SliderN: new FormControl(''),
-    ST: new FormControl('')
+    ST: new FormControl(''),
+    dpti: new FormControl('')
 
   });
   formatLabel(value: number | null) {
@@ -123,52 +130,79 @@ export class FinanceComponent implements OnInit {
   }
   onSubmit() {
     // TODO: Use EventEmitter with form value
-    var M = this.profileForm.get('yearSelected').value;
+    //var M = this.profileForm.get('yearSelected').value;
     //var IR = this.profileForm.get('Interest').value;
-  //console.log(M)
+ 
     // Formulas
     var PBT = this.profileForm.get('SliderN').value
     var creditScore = this.profileForm.get('scoreSelected').value
     var Mon = this.profileForm.get('yearSelected').value
-    var SalesTax = 0
-    var apr = 0
-    var len = 0
+    var SalesTax = this.profileForm.get('ST').value
+    //var apr = 0
+    //var len = 0
+    //var p = 0
+    //var p1 = 0
+    var p2 = this.profileForm.get('dpti').value
+    
+    //var i = 0
+    //var A = 0
+    //var ti = 0
+
 
 
     console.log(this.profileForm.value)
     //conditional statment for calculations
     if(creditScore == '300-500'){
-      apr = 14.40
-      console.log(apr)
+      this.apr = 14.40
+      console.log(this.apr)
     } else if(creditScore == '501-600'){
-      apr = 11.85
-      console.log(apr)
+      this.apr = 11.85
+      console.log(this.apr)
     } else if(creditScore == '601-660'){
-      apr = 7.50
-      console.log(apr)
+      this.apr = 7.50
+      console.log(this.apr)
     } else if (creditScore == '661-780'){
-      apr = 4.55
-      console.log(apr)
+      this.apr = 4.55
+      console.log(this.apr)
+    } else if('781-850') {
+      this.apr = 3.65
+      console.log(this.apr)
     } else {
-      apr = 3.65
-      console.log(apr)
+      console.log("pls choose something")
     }
 
     if(Mon == '24') {
-      len =  24
-      console.log(len)
+      this.len =  24
+      console.log(this.len)
     } else if(Mon == '36') {
-      len = 36
-      console.log(len)
+      this.len = 36
+      console.log(this.len)
+    } else if('48') {
+      this.len = 48
+      console.log(this.len)
     } else {
-      len = 48
-      console.log(len)
+      console.log("pls choose something")
     }
-    console.log(Mon)
+    //console.log(Mon)
 
     //************  */Calculation for Calculator ************
+      this.p = PBT * (SalesTax / 100 )
+      this.p1 = PBT + this.p
+      p2 = this.p1 - p2
+      this.i = ((this.apr / 100) / 12)
+      this.A = p2 * (this.i * (Math.pow((1 + this.i), this.len)) / (Math.pow((1 + this.i), this.len) - 1))
+      this.ti = PBT - (Mon * this.A)
+
+      /*this.profileForm.setValue({
+        Monthly: A
+      });*/
+  
+    console.log("Monthly Payments: " + this.A)
+    console.log("Total Interest Rate: " + this.ti)
+    console.log("Total Amount: ")
+    console.log("Interest Rate: " + this.apr)
     
-    
+   
     
     }
 

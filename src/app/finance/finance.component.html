@@ -15,6 +15,7 @@
         </select>        
         <br /><br />
         Sales Tax:<input class="form-control" type="number" formControlName="ST">
+        down-payment/trade-in:<input class="form-control" type="number" formControlName="dpti">
        <!-- <select (change)="changeState($event)" formControlName="stateSelected">
                 <option value="">State</option>
                 <option *ngFor="let state of State" [ngValue]="state">{{state}}</option>
@@ -39,10 +40,10 @@
         Cost:
 <mat-slider id="slider" name ="sldier"thumbLabel [displayWith]="formatLabel" tickInterval="1" min="0" max="100000" formControlName="SliderN" ></mat-slider><br> 
 <br><br>
-    Monthly Payment:<input class="form-control" type="text" value=""disabled>
-    Interest Rate:<input class="form-control" type="text" value="" disabled >
-    Total Amount:<input class="form-control" type="text" value="" disabled>
-    Total Interest:<input class="form-control" type="text" value="" disabled><br>
+    Monthly Payment:<input class="form-control" type="text" [value]="A | number:'1.0-0'" disabled>
+    Interest Rate:<input class="form-control" type="text" [value]="apr" disabled >
+    <!--Total Amount:<input class="form-control" type="text" value="" disabled>-->
+    Total Interest:<input class="form-control" type="text" [value]="ti | number:'1.0-0'" disabled><br>
     <button mat-raised-button type="submit" [disabled]="!profileForm.valid">Submit</button>
     </form>
 </mat-card>
