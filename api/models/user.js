@@ -18,7 +18,7 @@ let User = new Schema({
         type: Number
     },
     location: {
-        type: Number
+        type: String
     }
 },{
     collection: 'users'
