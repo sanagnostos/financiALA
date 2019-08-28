@@ -9,6 +9,7 @@ const express = require('express');
     const userRoute = require('./routes/user.route')
     const carRoute = require('./routes/car.route')
     const loginRoute = require('./routes/login.route')
+    const dealerRoute = require('./routes/dealer.route')
 
     mongoose.Promise = global.Promise;
     mongoose.connect(config.DB, { useNewUrlParser: true }).then(
@@ -28,6 +29,7 @@ const express = require('express');
    app.use('/user', userRoute);
    app.use('/car', carRoute);
    app.use('/login', loginRoute);
+   app.use('/dealer', dealerRoute);
    
   const port = process.env.PORT || 4000;
 

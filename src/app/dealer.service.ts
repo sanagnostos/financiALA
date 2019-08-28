@@ -4,26 +4,24 @@ import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
-export class UserService {
+export class DealerService {
 
-  uri = 'http://localhost:4000/user';
+  uri = 'http://localhost:4000/dealer';
 
   constructor(private http: HttpClient) { }
 
-  addUser(first_name, last_name, email, password, rank, location) {
+  addDealer(name, location, manager) {
     const obj = {
-      first_name: first_name,
-      last_name: last_name,
-      email: email,
-      password: password,
-      rank: rank,
-      location: location
+      name: name,
+      location: location,
+      manager: manager,
+      
     };
     console.log(obj);
     this.http.post(`${this.uri}/add`, obj)
     .subscribe(res => console.log('Done'))
   }
-  getUser() {
+  getDealer() {
     return this
       .http
       .get(`${this.uri}`);

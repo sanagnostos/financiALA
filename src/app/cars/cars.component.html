@@ -3,14 +3,14 @@
 
     </div>
     <div id="content-grid">
-        <ul class="mdc-image-list my-image-list">
+        <ul class="mdc-image-list my-image-list" *ngFor="let car of cars">
         <!-- each li will be generated based on the data pulled from the car api -->
             <li class="mdc-image-list__item">
                 <div class="mdc-image-list__image-aspect-container">
                     <img class="mdc-image-list__image" src="/assets/images/kinky.jpg">
                 </div>
                 <div class="mdc-image-list__supporting">
-                    <span class="mdc-image-list__label">Text label</span>
+                    <span class="mdc-image-list__label">{{car.year}} {{car.make}}, {{car.model}}</span>
                 </div>
             </li>
             <li class="mdc-image-list__item">
@@ -18,10 +18,19 @@
                     <img class="mdc-image-list__image" src="/assets/images/kinky.jpg">
                 </div>
                 <div class="mdc-image-list__supporting">
-                    <span class="mdc-image-list__label">Text label</span>
+                    <span class="mdc-image-list__label">{{car.year}} {{car.make}}, {{car.model}}</span>
                 </div>
             </li>
             <li class="mdc-image-list__item">
+                <div class="mdc-image-list__image-aspect-container">
+                    <img class="mdc-image-list__image" src="/assets/images/porsche.jpg">
+                </div>
+                <div class="mdc-image-list__supporting">
+                    <span class="mdc-image-list__label">{{car.year}} {{car.make}}, {{car.model}}</span>
+                </div>
+            </li>
+            <br>
+           <!-- <li class="mdc-image-list__item">
                 <div class="mdc-image-list__image-aspect-container">
                     <img class="mdc-image-list__image" src="/assets/images/porsche.jpg">
                 </div>
@@ -44,15 +53,7 @@
                 <div class="mdc-image-list__supporting">
                     <span class="mdc-image-list__label">Text label</span>
                 </div>
-            </li>
-            <li class="mdc-image-list__item">
-                <div class="mdc-image-list__image-aspect-container">
-                    <img class="mdc-image-list__image" src="/assets/images/porsche.jpg">
-                </div>
-                <div class="mdc-image-list__supporting">
-                    <span class="mdc-image-list__label">Text label</span>
-                </div>
-            </li>
+            </li>-->
 
         </ul>
     </div>
