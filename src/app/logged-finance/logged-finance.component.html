@@ -15,26 +15,52 @@
     </mat-card>
 
     <mat-card class="CardDivR">
-        <h1 align="center">Calculator</h1><br>
-        Credit Score:
-        <select>
-            <option value="Providence" >300 - 500</option>
-            <option value="Boston">501 - 600</option>
-            <option value="New Bedford">601 - 660</option>
-            <option value="New Bedford">661 - 780</option>
-            <option value="New Bedford">781 - 850</option>
-        </select>
-        <br ><br >
-        Cost:
-    <mat-slider thumbLabel [displayWith]="formatLabel" tickInterval="1000" min="1" max="100000"></mat-slider><br>
+        <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+            <h1 align="center">Calculator</h1><br>
+            Credit Score:
+            <select (change)="changeCity($event)" formControlName="scoreSelected" >
+                <option value="">choose your credit score</option>
+                <option *ngFor="let score of Score" [value]="score">{{score}}</option>
+            </select>
+            <br /><br/>
+            Length of Months:
+            <select (change)="changeYear($event)" formControlName="yearSelected">
+                <option value="">Select Length of Months</option>
+                <option *ngFor="let month of Month" [value]="month">{{month}}</option>
+            </select>        
+            <br /><br />
+            Sales Tax:<input class="form-control" type="number" formControlName="ST">
+            down-payment/trade-in:<input class="form-control" type="number" formControlName="dpti">
+           <!-- <select (change)="changeState($event)" formControlName="stateSelected">
+                    <option value="">State</option>
+                    <option *ngFor="let state of State" [ngValue]="state">{{state}}</option>
+            </select>-->
+            <!--<select>
+                <option value="400" >300 - 500</option>
+                <option value="551">501 - 600</option>
+                <option value="631">601 - 660</option>
+                <option value="721">661 - 780</option>
+                <option value="816">781 - 850</option>
+            </select>
+            <br ><br >
+            Length of Finance: 
+            <select formControlName="years">
+                <option value="24" >2 Years</option>
+                <option value="36">3 Years</option>
+                <option value="48">4 Years</option>
+            </select>-->
+    
+    
+            <br ><br >
+            Cost:
+    <mat-slider id="slider" name ="sldier"thumbLabel [displayWith]="formatLabel" tickInterval="1" min="0" max="100000" formControlName="SliderN" ></mat-slider><br> 
     <br><br>
-    <div class="form-group">
-        Monthly Payment:<input class="form-control" type="text" name="Monthly">
-        Interest Rate:<input class="form-control" type="text" name="APR">
-        Total Amount:<input class="form-control" type="text" name="Amount">
-        Total Interest:<input class="form-control" type="text" name="Interest">
-    </div>
-    <button mat-raised-button color="primary" (click)="onLogIn()">Submit</button>
+        Monthly Payment:<input class="form-control" type="text" [value]="A | number:'1.0-0'" disabled>
+        Interest Rate:<input class="form-control" type="text" [value]="apr" disabled >
+        <!--Total Amount:<input class="form-control" type="text" value="" disabled>-->
+        Total Interest:<input class="form-control" type="text" [value]="ti | number:'1.0-0'" disabled><br>
+        <button mat-raised-button type="submit" [disabled]="!profileForm.valid">Submit</button>
+        </form>
      
     </mat-card>
 
