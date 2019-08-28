@@ -1,88 +1,63 @@
 <div id="wrapper">
-  
-
-  <div class="CardDivL">
-        
-    <h1 align="center">Inventory</h1><br>
-    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-
-        
+  <div class="CardDivL">    
+    <h1>Inventory</h1><br>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">   
         <ng-container matColumnDef="position">
           <th mat-header-cell *matHeaderCellDef> No. </th>
           <td mat-cell *matCellDef="let element"> {{element.position}} </td>
-        </ng-container>
-      
-        
+        </ng-container>    
         <ng-container matColumnDef="Make">
           <th mat-header-cell *matHeaderCellDef> Make </th>
           <td mat-cell *matCellDef="let element"> {{element.Make}} </td>
-        </ng-container>
-      
-       
+        </ng-container>      
         <ng-container matColumnDef="Model">
           <th mat-header-cell *matHeaderCellDef> Model </th>
           <td mat-cell *matCellDef="let element"> {{element.Model}} </td>
-        </ng-container>
-      
-      
+        </ng-container>      
         <ng-container matColumnDef="Year">
           <th mat-header-cell *matHeaderCellDef> Year </th>
           <td mat-cell *matCellDef="let element"> {{element.Year}} </td>
-        </ng-container>
-      
+        </ng-container>      
         <ng-container matColumnDef="Price">
             <th mat-header-cell *matHeaderCellDef> Price </th>
             <td mat-cell *matCellDef="let element"> {{element.Price}} </td>
           </ng-container>
-
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-      </table><br>
-      
+      </table><br> 
+      <div id="buttons">   
       <button mat-raised-button color="primary" class="block" (click)="onCreate()">Create</button>
       <button mat-raised-button color="primary" class="block" (click)="onEdit()">Edit</button>
       <button mat-raised-button color="primary" class="block" (click)="onRemove()">Remove</button>
-      
-    </div>
-
-
-
-<mat-card class="CardDivR">
+    </div>       
+  </div>
+  <div class="CardDivR">
+  <h1>Car Information</h1><br>
+  <mat-card>
     <form [formGroup]="angForm" novalidate>
-
-    <h1 align="center">Car Info</h1><br>
-    <img src="/assets/images/placeholder.png"><br><br>
-    <mat-divider></mat-divider><br><br>
-    <div class="form-group">
+      <img src="/assets/images/placeholder.png"><br><br>
+      <mat-divider></mat-divider><br><br>
+      <div class="form-group">
         Make:<input type="text" class="form-control" formControlName="make" #make>
         Model:<input class="form-control" formControlName="model" #model>
         Year:<input class="form-control" formControlName="year" #year>
         Price:<input class="form-control" type="text" formControlName="price" #price><br><br>
         Dealership: <select class="form-control" formControlName="dealership" #dealership> 
-            <option value="Dealership1" >Dealership 1</option>
+            <option value="Dealership1">Dealership 1</option>
             <option value="Dealership2">Dealership 2</option>
             <option value="Dealership3">Dealership 3</option>
             <option value="Dealership4">Dealership 4</option>
             <option value="Dealership5">Dealership 5</option>
-        </select>
-        
-    </div>
-    
-<!--<button mat-raised-button color="primary" (click)="onLogIn()">Submit</button>-->
-<div class="form-group">
-  <button (click)="addCar(make.value, model.value, year.value, price.value, dealership.value)"
-      [disabled]="angForm.pristine || angForm.invalid" 
-      class="btn btn-primary">
-      Register
-    </button>
-
+        </select>        
+      </div>    
+      <div class="form-group">
+        <button (click)="addCar(make.value, model.value, year.value, price.value, dealership.value)"
+        [disabled]="angForm.pristine || angForm.invalid" 
+        class="btn btn-primary">
+        Register
+        </button>
+      </div>
+    </form>
+  </mat-card>
 </div>
- </form>
-</mat-card>
-
-
-  
-
-
-
 </div>
