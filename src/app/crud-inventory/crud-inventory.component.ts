@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup,  FormBuilder,  Validators } from '@angular/forms';
 import { CarService } from '../car.service';
 import { Router } from '@angular/router';
+import { DealerService } from '../dealer.service';
 
 
 
@@ -28,8 +29,9 @@ const ELEMENT_DATA: PeriodicElement[] = [
 })
 export class CrudInventoryComponent implements OnInit {
   cars: CarService[];
+  dealers: DealerService[];
   angForm: FormGroup;
-  constructor(private fb: FormBuilder, private cs: CarService, private router: Router) {
+  constructor(private fb: FormBuilder, private cs: CarService, private router: Router, private ds: DealerService) {
     this.createForm();
   }
 
@@ -55,6 +57,12 @@ export class CrudInventoryComponent implements OnInit {
         this.cars = data;
         console.log(this.cars)
      //   console.log(ELEMENT_DATA)
+      })
+      this.ds
+      .getDealer()
+      .subscribe((data: DealerService[]) => {
+        this.dealers = data;
+        console.log(this.dealers)
       })
 
   }

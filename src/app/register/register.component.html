@@ -32,6 +32,16 @@
                     Email is required.
                 </div>
               </div>
+
+              <div class="form-group">
+                <label class="form-group">Location:</label>
+                <select class="form-control" formControlName="location" #location > 
+                <option *ngFor="let dealer of dealers" value={{dealer._id}}>
+                  {{dealer.name}}, {{dealer.location}}
+                </option>
+                </select>
+              </div> 
+
   
             <div class="form-group">
               <label class="form-group">Password:</label>
@@ -43,19 +53,9 @@
                 </div>
               </div>
   
-            <div class="form-group">
-              <label class="form-group">Re Enter Password:</label>
-              <input type="password" class="form-control" formControlName="repassword">
-            </div>
-            <div *ngIf="angForm.controls['repassword'].invalid && (angForm.controls['repassword'].dirty || angForm.controls['repassword'].touched)" class="alert alert-danger">
-                <div *ngIf="angForm.controls['repassword'].errors.required">
-                    Reentering your password is required.
-                </div>
-              </div>
   
               <input id="rank" name="rank" type="hidden" value=1 id="rank" #rank>
-      
-              <input id="location"  name="location" type="hidden" value=1 id="location" #location>
+
               
               <br>
   

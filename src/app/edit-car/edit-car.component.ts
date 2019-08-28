@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { CarService } from '../car.service';
+import { DealerService } from '../dealer.service';
 
 @Component({
   selector: 'app-edit-car',
@@ -10,21 +11,19 @@ import { CarService } from '../car.service';
 })
 export class EditCarComponent implements OnInit {
 
+  dealers: DealerService[];
 
   car: any = {};
   angForm: FormGroup;
-  dealerships = [
+  /*dealerships = [
     {name: 'Dealership1'},
     {name: 'Dealership2'},
     {name: 'Dealership3'},
     {name: 'Dealership4'},
     {name: 'Dealership5'},
-  ];
+  ];*/
 
-  constructor(private route: ActivatedRoute,
-    private router: Router,
-    private cs: CarService,
-    private fb: FormBuilder) {
+  constructor(private route: ActivatedRoute, private router: Router, private cs: CarService, private fb: FormBuilder, private ds: DealerService) {
       this.createForm();
      }
   createForm() {
@@ -42,6 +41,12 @@ export class EditCarComponent implements OnInit {
         this.car = res;
       });
     });
+    this.ds
+      .getDealer()
+      .subscribe((data: DealerService[]) => {
+        this.dealers = data;
+        console.log(this.dealers)
+      })
   }
   updateCar(make, model, year, price, dealer) {
 

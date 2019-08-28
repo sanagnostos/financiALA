@@ -83,20 +83,18 @@
     <form [formGroup]="angForm" novalidate>
 
     <h1 align="center">Car Info</h1><br>
-    <img src="/assets/images/placeholder.png"><br><br>
+  <!--  <img src="/assets/images/placeholder.png">-->
     <mat-divider></mat-divider><br><br>
     <div class="form-group">
         Make:<input type="text" class="form-control" formControlName="make" #make>
         Model:<input class="form-control" formControlName="model" #model>
         Year:<input class="form-control" formControlName="year" #year>
         Price:<input class="form-control" type="text" formControlName="price" #price><br><br>
-        Dealership: <select class="form-control" formControlName="dealership" #dealership> 
-            <option value="Dealership1" >Dealership 1</option>
-            <option value="Dealership2">Dealership 2</option>
-            <option value="Dealership3">Dealership 3</option>
-            <option value="Dealership4">Dealership 4</option>
-            <option value="Dealership5">Dealership 5</option>
-        </select>
+        Dealer:<select class="form-control" formControlName="dealership" #dealership > 
+          <option *ngFor="let dealer of dealers" value={{dealer.name}}>
+            {{dealer.name}}, {{dealer.location}}
+          </option>
+          </select>
         
     </div>
     

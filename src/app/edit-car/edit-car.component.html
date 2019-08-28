@@ -40,14 +40,23 @@
                 </div>
             </div>
 
-            <div class="form-group">
+      <!--      <div class="form-group">
                 <label class="col-md-4">Dealership</label>
                <select formControlName="dealer" #dealer>
                 <option *ngFor="let dealerships of dealerships" [ngValue]="dealer" > 
                   {{ dealerships.name }}
                 </option>
               </select>
-            </div>
+            </div>-->
+
+            <div class="form-group">
+                <label class="form-group">Location:</label>
+                <select class="form-control" formControlName="dealer" #dealer > 
+                <option *ngFor="let dealer of dealers" value={{dealer.name}} [ngValue]="dealer">
+                  {{dealer.name}}, {{dealer.location}}
+                </option>
+                </select>
+              </div> 
 
 
         <div class="form-group">

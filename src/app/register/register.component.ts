@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup,  FormBuilder,  Validators } from '@angular/forms';
 import { UserService } from '../user.service';
+import { DealerService } from '../dealer.service';
 
 
 @Component({
@@ -9,9 +10,10 @@ import { UserService } from '../user.service';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-  
+  dealers: DealerService[];
+
   angForm: FormGroup;
-  constructor(private fb: FormBuilder, private us: UserService) {
+  constructor(private fb: FormBuilder, private us: UserService, private ds: DealerService) {
     this.createForm();
   }
 
@@ -21,7 +23,6 @@ export class RegisterComponent implements OnInit {
       last_name: ['', Validators.required ],
       email: ['', Validators.required ],
       password: ['', Validators.required ],
-      repassword: ['', Validators.required ],
       rank: [''],
       location: ['']
 
@@ -34,6 +35,12 @@ export class RegisterComponent implements OnInit {
 
   
   ngOnInit() {
+    this.ds
+      .getDealer()
+      .subscribe((data: DealerService[]) => {
+        this.dealers = data;
+        console.log(this.dealers)
+      })
   }
 
 }
