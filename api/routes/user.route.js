@@ -53,7 +53,13 @@ userRoutes.route('/update/:id').post(function (req, res) {
       }
     });
   });
-  
+  userRoutes.route('/updateRank3/:id').post(function(req, res) {
+      console.log("updating this")
+      User.update({'_id':req.body.id}, {$set: {rank: 3}}, {w:1}, function(err, result) {
+          console.log(result);
+      });
+  });
+
   // Defined delete | remove | destroy route
   userRoutes.route('/delete/:id').get(function (req, res) {
       User.findByIdAndRemove({_id: req.params.id}, function(err, user){
@@ -61,5 +67,4 @@ userRoutes.route('/update/:id').post(function (req, res) {
           else res.json('Successfully removed');
       });
   });
-  
   module.exports = userRoutes;

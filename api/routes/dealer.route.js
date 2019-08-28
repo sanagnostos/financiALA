@@ -6,6 +6,7 @@ let Dealer = require('../models/dealer');
 
 dealerRoute.route('/add').post(function (req, res) {
     let dealer = new Dealer(req.body);
+    console.log("Dealer being added...")
     dealer.save()
         .then(dealer => {
             res.status(200).json({'dealer': 'dealer in added successfully'});

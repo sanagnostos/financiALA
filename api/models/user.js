@@ -14,7 +14,7 @@ let User = new Schema({
     password: {
         type: String
     },
-    role: {
+    rank: {
         type: Number
     },
     location: {

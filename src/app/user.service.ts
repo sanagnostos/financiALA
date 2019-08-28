@@ -11,6 +11,7 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
   addUser(first_name, last_name, email, password, rank, location) {
+
     const obj = {
       first_name: first_name,
       last_name: last_name,
@@ -20,6 +21,7 @@ export class UserService {
       location: location
     };
     console.log(obj);
+    console.log(obj.rank);
     this.http.post(`${this.uri}/add`, obj)
     .subscribe(res => console.log('Done'))
   }
