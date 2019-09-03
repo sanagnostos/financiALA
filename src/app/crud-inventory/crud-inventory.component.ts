@@ -67,6 +67,8 @@ export class CrudInventoryComponent implements OnInit {
   }
   addCar(make, model, year, price, dealer, ) {
     this.cs.addCar(make, model, year, dealer, price)
+    this.createForm();
+    alert(make + " added successfully");
     this.ngOnInit();
   }
 

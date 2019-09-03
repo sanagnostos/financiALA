@@ -31,6 +31,7 @@ export class RegisterComponent implements OnInit {
   }
   addUser(first_name, last_name, email, password, rank, location) {
     this.us.addUser(first_name, last_name, email, password, rank, location)
+    this.createForm()
   }
 
   
