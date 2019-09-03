@@ -30,4 +30,18 @@ export class UserService {
       .http
       .get(`${this.uri}`);
   }
+  promote(id) {
+    const obj = {
+      id: id
+    };
+    this.http.post(`${this.uri}/promote/${obj.id}`, obj)
+    .subscribe(res => console.log('Done'));
+  }
+  demote(id) {
+    const obj = {
+      id: id
+    };
+    this.http.post(`${this.uri}/demote/${obj.id}`, obj)
+    .subscribe(res => console.log('Done'));
+  }
 }

@@ -59,7 +59,19 @@ userRoutes.route('/update/:id').post(function (req, res) {
           console.log(result);
       });
   });
+  userRoutes.route('/promote/:id').post(function(req, res) {
+    console.log("updating this")
+    User.update({'_id':req.body.id}, {$set: {rank: 2}}, {w:1}, function(err, result) {
+        console.log(result);
+    });
+});
 
+  userRoutes.route('/demote/:id').post(function(req, res) {
+    console.log("demoted this")
+    User.update({'_id':req.body.id}, {$set: {rank: 1}}, {w:1}, function(err, result) {
+        console.log(result);
+    });
+  });
   // Defined delete | remove | destroy route
   userRoutes.route('/delete/:id').get(function (req, res) {
       User.findByIdAndRemove({_id: req.params.id}, function(err, user){
