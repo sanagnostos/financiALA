@@ -12,6 +12,7 @@ import { LoggedFinanceComponent } from './logged-finance/logged-finance.componen
 import { CrudInventoryComponent } from './crud-inventory/crud-inventory.component';
 import { CustomerHomeComponent } from './customer-home/customer-home.component';
 import { EditCarComponent } from './edit-car/edit-car.component';
+import { SalesmanPromoComponent } from './salesman-promo/salesman-promo.component'
 
 
 const routes: Routes = [{
@@ -58,6 +59,10 @@ const routes: Routes = [{
 {
   path:"home",
   component: CustomerHomeComponent
+},
+{
+  path:"salesman",
+  component: SalesmanPromoComponent
 }];
 
 @NgModule({

@@ -25,6 +25,8 @@ export class DealershipComponent implements OnInit {
   }
   addDealer(name, location, manager) {
     this.ds.addDealer(name, location, manager)
+    alert(name + " added successfully")
+    this.createForm();
   }
   ngOnInit() {
     this.us

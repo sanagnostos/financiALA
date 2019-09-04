@@ -28,6 +28,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { CrudInventoryComponent } from './crud-inventory/crud-inventory.component';
 import { CustomerHomeComponent } from './customer-home/customer-home.component';
 import { FindDealComponent } from './find-deal/find-deal.component';
+import { SalesmanPromoComponent } from './salesman-promo/salesman-promo.component';
+
 
 @NgModule({
   declarations: [
@@ -45,7 +47,8 @@ import { FindDealComponent } from './find-deal/find-deal.component';
     CrudInventoryComponent,
     CustomerHomeComponent,
     EditCarComponent,
-    FindDealComponent
+    FindDealComponent,
+    SalesmanPromoComponent
   ],
   imports: [
     BrowserModule,

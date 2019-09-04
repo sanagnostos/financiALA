@@ -1,0 +1,32 @@
+<div id="wrapper">
+    <div class="CardDivL">
+        <h1 align="center">Salesman</h1>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <td>ID</td>
+                    <td>First Name</td>
+                    <td>Last Name</td>
+                    <td>Location</td>
+                    <td>Rank</td>
+                    <td>Promote</td>
+                    <td>Demote</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let user of users">
+
+                    <td>{{ user._id }}</td>
+                    <td>{{ user.first_name }}</td>
+                    <td>{{ user.last_name }}</td>
+                    <td>{{ user.location }}</td>
+                    <td>{{ user.rank }}</td>
+                    <td><a (click) = "promote(user._id, user.first_name)"><button mat-raised-button color="primary" class="block">Create Salesman</button></a></td>
+                    <td><a (click) = "demote(user._id, user.last_name)"><button mat-raised-button color="primary" class="block">Demote</button></a></td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+</div>

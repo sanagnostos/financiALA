@@ -3,6 +3,7 @@ import { FormGroup,  FormBuilder,  Validators } from '@angular/forms';
 import { CarService } from '../car.service';
 import { Router } from '@angular/router';
 import { DealerService } from '../dealer.service';
+import { HttpClient } from '@angular/common/http';
 
 
 
@@ -28,11 +29,31 @@ const ELEMENT_DATA: PeriodicElement[] = [
   styleUrls: ['./crud-inventory.component.css']
 })
 export class CrudInventoryComponent implements OnInit {
+
+  selectedFile: File
   cars: CarService[];
   dealers: DealerService[];
   angForm: FormGroup;
-  constructor(private fb: FormBuilder, private cs: CarService, private router: Router, private ds: DealerService) {
+  constructor(private fb: FormBuilder, private cs: CarService, private router: Router, private ds: DealerService, private http: HttpClient) {
     this.createForm();
+  }
+
+// IMAGE UPLOAD BOI
+  onFileChanged(event) {
+    this.selectedFile = event.target.files[0]
+  }
+
+  onUpload() {
+    const uploadData = new FormData();
+    uploadData.append('myFile', this.selectedFile, this.selectedFile.name);
+    this.http.post('http://localhost:4000/file-upload', 
+    uploadData,
+    {
+      reportProgress: true,
+      observe: 'events'
+    }).subscribe(event => {
+      console.log(event);
+    });
   }
 
   createForm() {
@@ -46,6 +67,8 @@ export class CrudInventoryComponent implements OnInit {
   }
   addCar(make, model, year, price, dealer, ) {
     this.cs.addCar(make, model, year, dealer, price)
+    this.createForm();
+    alert(make + " added successfully");
     this.ngOnInit();
   }
 
@@ -81,6 +104,13 @@ export class CrudInventoryComponent implements OnInit {
   dataSource = this.cars;
 
 }
+export class MyFileUploadComponent {
+  selectedFile: File
+  uri = 'http://localhost:4000/user';
+
+  
+}
+
 
 export interface PeriodicElement {
   position: number;
