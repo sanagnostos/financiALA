@@ -13,8 +13,10 @@ loginRoute.route('/LogIn').post(function (req, res) {
         console.log(doc)
         if(doc != null) {
             req.session.user = doc;
+            doc.password = ""
             res.status(200).json({
-                "status": true})
+                "status": true,
+            "user":doc})
         } else {
             req.session.user = doc;
             res.status(401).json({
