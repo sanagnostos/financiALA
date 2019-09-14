@@ -1,0 +1,32 @@
+
+mat-slider {
+    width: 200px;
+  }
+  .CardDivL{
+    border: 2px solid black;
+    width: 30%;
+    margin: auto;
+    text-align: center;
+    margin-left: 15rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    float: left;
+    background-color: whitesmoke ;
+  }
+  .CardDivR{
+    width: 30%;
+    margin: auto;
+    text-align: center;
+    margin-right: 15rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    float: right;
+    background-color: whitesmoke;
+  }
+  p {
+    padding-right: 5px;
+}
+.texta{
+    text-align: center;
+    margin: 0 auto;
+}

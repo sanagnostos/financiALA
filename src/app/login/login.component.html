@@ -1,0 +1,32 @@
+<div id="wrapper">
+<div class="card-1">
+    <div class="card-body">
+  
+      <h1 align="center">Log In</h1>
+      <form [formGroup]="angForm" novalidate>    
+            <div class="form-group">
+              <label class="form-group">Email:</label>
+              <input type="email" class="form-control" formControlName="email" #email>
+            </div>
+            <div class="form-group">
+              <label class="form-group">Password:</label>
+              <input type="password" class="form-control" formControlName="password" #password>
+            </div>
+                <br>
+  
+            <div class="form-group">
+              <button (click)="LogIn(email.value, password.value)"
+                  [disabled]="angForm.pristine || angForm.invalid" 
+                  class="btn btn-primary">
+                  Log In
+                </button>
+          </div>
+              <div class="form-group">
+                <label id="error"></label>
+              </div>
+      </form>
+    </div>
+  </div>
+</div>  
+  
+  

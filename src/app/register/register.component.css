@@ -1,0 +1,14 @@
+mat-card {
+    width: 30%;
+    margin: auto;
+    text-align: center;
+    margin-top: 2rem;
+}
+p {
+    padding-right: 5px;
+}
+
+.card-1 {
+    margin: 0 auto;
+     width: 35%;
+}

@@ -1,0 +1,65 @@
+<!-- TODO typography -->
+<div id="wrapper">
+  <div id="carousel">
+    <ngb-carousel >
+      <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+          <img src="/assets/images/slide2image.jpg" alt="Random first slide">
+        </div>
+        <div class="carousel-caption">
+          <h3>Browse our inventory</h3>
+        <p>View affordable used cars near you!</p>
+        </div>
+      </ng-template>
+      <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+          <img src="/assets/images/slideimage.jpg" alt="Random second slide">
+        </div>
+        <div class="carousel-caption">
+          <h3>Need help financing?</h3>
+          <p>Our finance calculator lets you figure out what you can afford.</p>
+        </div>
+      </ng-template>
+      <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+          <img src="/assets/images/smileyguy.png" alt="Random third slide">
+        </div>
+        <div class="carousel-caption">
+          <h3>In the industry?</h3>
+          <p>Use our site to advertise your business. Our inventory management system lets you easily reach broader audiences.</p>
+        </div>
+      </ng-template>
+    </ngb-carousel>
+  </div><!--close carousel-->
+  <div id="content">
+    <mat-grid-list cols="3" rowHeight="1:1" gutterSize="30" mat-grid-tile-header="true" mat-grid-tile-footer="true">
+      <mat-grid-tile id="LocationTile">
+        <mat-grid-tile-header>
+          <h3>Location</h3>
+        </mat-grid-tile-header>
+          <p>tile placeholder for list of locations</p>
+        <mat-grid-tile-footer>
+          <button mat-raised-button routerLink="/dealership">Location</button>
+        </mat-grid-tile-footer>
+      </mat-grid-tile>
+      <mat-grid-tile id="CarTile">
+          <mat-grid-tile-header>
+              <h3>Browse Cars</h3>
+            </mat-grid-tile-header>
+              <p>tile placeholder for saved car slider</p>
+            <mat-grid-tile-footer>
+              <button mat-raised-button routerLink="/cars">Cars</button>
+            </mat-grid-tile-footer>
+      </mat-grid-tile>
+      <mat-grid-tile id="FinanceTile">
+          <mat-grid-tile-header>
+              <h3>Finance Calculator</h3>
+            </mat-grid-tile-header>
+              <p>Check out our finance calculator!</p>
+            <mat-grid-tile-footer>
+              <button mat-raised-button routerLink="/finance">Calculator</button>
+            </mat-grid-tile-footer>
+      </mat-grid-tile>
+    </mat-grid-list>      
+  </div><!--close content-->
+</div><!--close wrapper-->

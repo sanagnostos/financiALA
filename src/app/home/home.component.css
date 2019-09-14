@@ -1,0 +1,54 @@
+/*Going to need to resize images we use for the banners, using placeholders
+at the moment. Also need to style the background so that it doesnt
+flash white when you press next/previous*/
+.picsum-img-wrapper{
+    display: flex;
+    width: 100%;
+    margin: auto;
+    justify-content: center;
+    height:400px;
+}
+img{
+    width: 80%;
+    height: auto; 
+}
+.carousel-caption{
+    color:white;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+mat-grid-tile{
+    background-color: #0F4962;
+    
+    display: flexbox;
+    flex-direction: column;
+    height: 100%;
+}
+
+#content{
+    width: 80%;
+    margin: auto;
+    background-color: rgba(0,0,0,0);
+}
+
+.mat-grid-tile-header{
+    height: 25%;
+    background-color: #0F4962;
+    justify-content: center;
+    width: 100%;
+}
+
+.tileContent{
+    height: 50%;
+    width: 100%;
+}
+
+.mat-grid-tile-footer{
+    height: 25%;
+    background-color: #0F4962;
+    width: 100%;
+    justify-content: center;
+}
+#wrapper{
+    padding-top: 0;
+}

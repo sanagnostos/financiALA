@@ -1,0 +1,26 @@
+<div id="wrapper">
+    <div id="filter-bar">
+
+    </div>
+    <div id="content-grid">
+        <ul class="mdc-image-list my-image-list" >
+        <!-- each li will be generated based on the data pulled from the car api -->
+            <li class="mdc-image-list__item" *ngFor="let car of cars">
+                <div class="mdc-image-list__image-aspect-container">
+               <!--     <img class="mdc-image-list__image" src="/assets/images/kinky.jpg">-->
+                    <img class="med-image-list__image" height=170 width=210 src="/assets/images/{{car.model}}.jpg">
+                    <!--<img class="med-image-list__image" src="/assets/images/m3.jpg">-->
+                    <span class="mdc-image-list__label">{{car.year}} {{car.make}}, {{car.model}}<br>
+                        {{car.dealer}} - ${{car.price}}
+                        </span>
+                </div>
+                <div class="mdc-image-list__supporting">
+                    
+                    
+                </div>
+            </li>
+
+
+        </ul>
+    </div>
+</div>

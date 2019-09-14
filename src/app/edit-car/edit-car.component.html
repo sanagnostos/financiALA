@@ -1,0 +1,70 @@
+<div class="card">
+    <div class="card-body">
+        <form [formGroup]="angForm" novalidate>
+            <div class="form-group">
+                <label class="col-md-4">Make</label>
+                <input type="text" class="form-control" formControlName="make" #make [(ngModel)] = "car.make" />
+            </div>
+            <div *ngIf="angForm.controls['make'].invalid && (angForm.controls['make'].dirty || angForm.controls['make'].touched)" class="alert alert-danger">
+                <div *ngIf="angForm.controls['make'].errors.required">
+                    Car's make is required.
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4">Model</label>
+                <input type="text" class="form-control" formControlName="model" #model [(ngModel)] = "car.model" />
+            </div>
+            <div *ngIf="angForm.controls['model'].invalid && (angForm.controls['model'].dirty || angForm.controls['model'].touched)" class="alert alert-danger">
+                <div *ngIf="angForm.controls['model'].errors.required">
+                    Car's model is required.
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-4">Year</label>
+                <input type="text" class="form-control" formControlName="year" #year [(ngModel)] = "car.year" />
+            </div>
+            <div *ngIf="angForm.controls['year'].invalid && (angForm.controls['year'].dirty || angForm.controls['year'].touched)" class="alert alert-danger">
+                <div *ngIf="angForm.controls['year'].errors.required">
+                    Car's year is required.
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-4">Price</label>
+                <input type="text" class="form-control" formControlName="price" #price [(ngModel)] = "car.price" />
+            </div>
+            <div *ngIf="angForm.controls['price'].invalid && (angForm.controls['price'].dirty || angForm.controls['price'].touched)" class="alert alert-danger">
+                <div *ngIf="angForm.controls['price'].errors.required">
+                    CAr's price is required.
+                </div>
+            </div>
+
+      <!--      <div class="form-group">
+                <label class="col-md-4">Dealership</label>
+               <select formControlName="dealer" #dealer>
+                <option *ngFor="let dealerships of dealerships" [ngValue]="dealer" > 
+                  {{ dealerships.name }}
+                </option>
+              </select>
+            </div>-->
+
+            <div class="form-group">
+                <label class="form-group">Location:</label>
+                <select class="form-control" formControlName="dealer" #dealer > 
+                <option selected [ngValue]="car.dealer">{{car.dealer}}</option>
+                <option *ngFor="let dealer of dealers" value={{dealer.name}}>
+                  {{dealer.name}}, {{dealer.location}}
+                </option>
+                </select>
+              </div> 
+
+
+        <div class="form-group">
+            <button (click)="updateCar(make.value, model.value, year.value, price.value, dealer.value)"
+            [disabled]="angForm.invalid" 
+            class="btn btn-primary">Submit Update</button>
+        </div>
+        </form>
+    </div>
+</div>
