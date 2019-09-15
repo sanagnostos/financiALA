@@ -31,6 +31,8 @@ import { FindDealComponent } from './find-deal/find-deal.component';
 import { SalesmanPromoComponent } from './salesman-promo/salesman-promo.component';
 import { DealershipInfoComponent } from './dealership-info/dealership-info.component';
 import { UserInfoComponent } from './user-info/user-info.component';
+import { FileSelectDirective } from 'ng2-file-upload';
+
 
 
 @NgModule({
@@ -53,7 +55,8 @@ import { UserInfoComponent } from './user-info/user-info.component';
     SalesmanPromoComponent,
     DealershipInfoComponent,
     UserInfoComponent,
-    SalesmanPromoComponent
+    SalesmanPromoComponent,
+    FileSelectDirective
   ],
   imports: [
     BrowserModule,
