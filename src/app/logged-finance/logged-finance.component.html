@@ -1,15 +1,15 @@
 <div id="wrapper">
     <mat-card class="CardDivL">
         <h1 align="center">Car</h1><br>
-        <img src="/assets/images/Twitter.png"><br><br>
-        <p>$$$$<p><br>
+        <img height=200 width=280 src="/assets/images/{{car.model}}.jpg"><br><br>
+        <p>$ <input type="text" [(ngModel)] = "car.price"><p><br>
         <mat-divider></mat-divider><br><br>
-        <img src="/assets/images/Twitter.png"><br><br>
+     <!--   <img src="/assets/images/Twitter.png"><br><br>-->
       
         <mat-list role="list">
-            <mat-list-item role="listitem">Item 1</mat-list-item>
-            <mat-list-item role="listitem">Item 2</mat-list-item>
-            <mat-list-item role="listitem">Item 3</mat-list-item>
+            <mat-list-item role="listitem">{{car.make}}</mat-list-item>
+            <mat-list-item role="listitem">{{car.model}}</mat-list-item>
+            <mat-list-item role="listitem">{{car.dealer}}</mat-list-item>
           </mat-list>
           
     </mat-card>
@@ -53,7 +53,7 @@
     
             <br ><br >
             Cost:
-    <mat-slider id="slider" name ="sldier"thumbLabel [displayWith]="formatLabel" tickInterval="1" min="0" max="100000" formControlName="SliderN" ></mat-slider><br> 
+    <mat-slider id="slider" name ="sldier"thumbLabel [displayWith]="formatLabel" tickInterval="1" min="0" max="100000" formControlName="SliderN" value="[(ngModel)] = car.price"></mat-slider><br> 
     <br><br>
         Monthly Payment:<input class="form-control" type="text" [value]="A | number:'1.0-0'" disabled>
         Interest Rate:<input class="form-control" type="text" [value]="apr" disabled >

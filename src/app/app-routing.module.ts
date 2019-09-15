@@ -46,7 +46,7 @@ const routes: Routes = [{
   component: AboutComponent
 },
 {
-  path: 'loggedF',
+  path: 'loggedF/:id',
   component: LoggedFinanceComponent
   
 },

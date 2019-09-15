@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
 import { MatSliderChange } from '@angular/material';
+import { CarService } from '../car.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 
 @Component({
@@ -9,6 +11,7 @@ import { MatSliderChange } from '@angular/material';
   styleUrls: ['./logged-finance.component.css']
 })
 export class LoggedFinanceComponent implements OnInit {
+  car: any = {};
   Score: any = ['300-500', '501-600', '601-660', '661-780', '781-850']
   Month: any = ['24', '36', '48']
   A : number = 0
@@ -18,55 +21,6 @@ export class LoggedFinanceComponent implements OnInit {
   p1 : number = 0
   i : number = 0
   ti : number = 0
-  /*State: any = ['AL',
-  'AK',
-  'AZ',
-  'AR',
-  'CA',
-  'CO',
-  'CT',
-  'DE',
-  'FL',
-  'GA',
-  'HI',
-  'ID',
-  'IL',
-  'IN',
-  'IA',
-  'KS',
-  'KY',
-  'LA',
-  'ME',
-  'MD',
-  'MA',
-  'MN',
-  'MS',
-  'MO',
-  'MT',
-  'NE',
-  'NV',
-  'NH',
-  'NJ',
-  'NM',
-  'NY',
-  'NC',
-  'ND',
-  'OH',
-  'OK',
-  'OR',
-  'PA',
-  'RI',
-  'SC',
-  'SD',
-  'TN',
-  'TX',
-  'UT',
-  'VT',
-  'VA',
-  'WA',
-  'WV',
-  'WI',
-  'WY']*/
 
   profileForm = new FormGroup({
     Monthly: new FormControl(''),
@@ -92,10 +46,15 @@ export class LoggedFinanceComponent implements OnInit {
     return value;
     
   }
-  constructor() { }
+  constructor(private cs: CarService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
-
+    this.route.params.subscribe(params => {
+      this.cs.editCar(params['id']).subscribe(res => {
+        this.car = res;
+       // this.car.model = "/assets/images/" + this.car.model + ".jpg"
+            });
+    });
 
   }
   
