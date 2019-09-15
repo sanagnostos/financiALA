@@ -4,8 +4,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatInputModule, MatCardModule, MatButtonModule, MatSliderModule, MatGridListModule,} from '@angular/material' ;
 import { MatSelectModule } from '@angular/material/select';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import{ FileSelectDirective } from 'ng2-file-upload';
-
 
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
@@ -31,6 +29,8 @@ import { CrudInventoryComponent } from './crud-inventory/crud-inventory.componen
 import { CustomerHomeComponent } from './customer-home/customer-home.component';
 import { FindDealComponent } from './find-deal/find-deal.component';
 import { SalesmanPromoComponent } from './salesman-promo/salesman-promo.component';
+import { DealershipInfoComponent } from './dealership-info/dealership-info.component';
+import { UserInfoComponent } from './user-info/user-info.component';
 
 
 @NgModule({
@@ -51,7 +51,9 @@ import { SalesmanPromoComponent } from './salesman-promo/salesman-promo.componen
     EditCarComponent,
     FindDealComponent,
     SalesmanPromoComponent,
-    FileSelectDirective
+    DealershipInfoComponent,
+    UserInfoComponent,
+    SalesmanPromoComponent
   ],
   imports: [
     BrowserModule,

@@ -2,15 +2,24 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
+    private currentUserSubject: BehaviorSubject<any>;
+    public currentUser: Observable<any>;
 
   uri = 'http://localhost:4000/login';
 
-  constructor(private http: HttpClient, private router: Router) { }
+  constructor(private http: HttpClient, private router: Router) { 
+    this.currentUserSubject = new BehaviorSubject<any>(JSON.parse(localStorage.getItem('currentUser')));
+        this.currentUser = this.currentUserSubject.asObservable();
+  }
 
   LogIn(email, password) {
     const obj = {
@@ -21,10 +30,11 @@ export class LoginService {
     this.http.post(`${this.uri}/login`, obj)
     .subscribe(res => {
       if(res['status']) {
-        console.log(res['status'])
+        console.log(res)
         console.log(obj.email + " is logged in")
         alert("Log in " + res['status'])
-        this.router.navigateByUrl('/loggedF')
+        this.router.navigateByUrl('/')
+        this.currentUserSubject.next(res['user'])
        //this.router.navigate(['/home', obj.email])
       } else {
         document.getElementById("error").innerText = "Log In Fail";
@@ -33,5 +43,9 @@ export class LoginService {
         alert("log in fail: " + res['status'])
       }
     })
+  }
+  logout(){
+    localStorage.removeItem('currentUser');
+        this.currentUserSubject.next(null);
   }
 }

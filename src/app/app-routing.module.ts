@@ -13,6 +13,8 @@ import { CrudInventoryComponent } from './crud-inventory/crud-inventory.componen
 import { CustomerHomeComponent } from './customer-home/customer-home.component';
 import { EditCarComponent } from './edit-car/edit-car.component';
 import { SalesmanPromoComponent } from './salesman-promo/salesman-promo.component'
+import { DealershipInfoComponent } from './dealership-info/dealership-info.component';
+import { UserInfoComponent } from './user-info/user-info.component';
 
 
 const routes: Routes = [{
@@ -62,6 +64,18 @@ const routes: Routes = [{
 },
 {
   path:"salesman",
+  component: SalesmanPromoComponent
+},
+{
+  path:'dealerInfo',
+  component: DealershipInfoComponent
+},
+{
+  path:'UserInfo',
+  component: UserInfoComponent
+},
+{
+  path:'CreateSM',
   component: SalesmanPromoComponent
 }];
 

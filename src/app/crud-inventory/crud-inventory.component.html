@@ -97,13 +97,13 @@
           </select>
         
     </div>
-    <input type="file" name="photo" ng2FileSelect [uploader]="uploader" />
+    <input
+  style="display: none"
+  type="file" (change)="onFileChanged($event)"
+  #fileInput>
+  <button (click)="fileInput.click()">Select File</button>
+  <button (click)="onUpload()">Upload!</button>
 
-    <button type="button" class="btn btn-success btn-s" 
-      (click)="uploader.uploadAll()" 
-      [disabled]="!uploader.getNotUploadedItems().length" >
-          Upload an Image
-    </button>
 <br>
 <br>
     

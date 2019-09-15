@@ -1,21 +1,23 @@
-<mat-toolbar>
-    <mat-toolbar-row>
+<mat-toolbar >
+    <mat-toolbar-row >
         <!-- <button mat-button routerLink="/"> Home </button> -->
         <a class="logo" routerLink="/">
             <img src="assets/images/financiala.png" height="56px" width="auto">
         </a>
         <button mat-button routerLink="/cars"> Browse Cars </button>
-        <button mat-button routerLink="/finance"> Finance Calculator </button>
-        <button mat-button routerLink="/dealership"> Find a Dealership </button>
+        <button mat-button [hidden]="isManager" routerLink="/finance"> Finance Calculator </button>
+        <button mat-button *ngIf="isManager"  routerLink="/dealership"> Create Dealership </button>
         <button mat-button routerLink="/about"> About Us </button>
-        <button mat-button routerLink="/loggedF"> logged </button>
-        <button mat-button routerLink="/crudi"> crudi </button>
-        <button mat-button routerLink="/userInfo"> User Info </button>
-        <button mat-button routerLink="/dealershipInfo"> Dealership Info </button>
+        <!--<button mat-button routerLink="/loggedF"> logged </button>-->
         
+        <button mat-button *ngIf="isBothUM" routerLink="/crudi"> Car Inventory </button>
+        <button mat-button *ngIf="currentUser" routerLink="/UserInfo"> My Info </button>
+        <button mat-button *ngIf="isManager" routerLink="/CreateSM">Create salesman</button>
+        user-
+        {{currentUser.first_name}}
         <span class="spacer"></span>
         <button mat-button routerLink="/login"> Login </button>
-
         <button mat-button routerLink="/user"> Register </button>
+        <button mat-button *ngIf="currentUser" (click)="logout()">Logout</button>
     </mat-toolbar-row>
 </mat-toolbar>

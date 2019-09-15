@@ -1,7 +1,7 @@
 
 <mat-toolbar>
     <div style="position:absolute; right:0%">
-        <input type="text" name="email"> <button mat-button (click)="onLogIn()">Click to subscribe and stay up to date on the latest FinanciALA news!</button>
+        <input type="text" [(ngModel)]='mail' name="email"> <button mat-button (click)="sendEmail()">Click to subscribe and stay up to date on the latest FinanciALA news!</button>
         <img src="/assets/images/instagram.png">
         <img src="/assets/images/Twitter.png">
     </div>

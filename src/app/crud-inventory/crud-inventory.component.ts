@@ -4,9 +4,7 @@ import { CarService } from '../car.service';
 import { Router } from '@angular/router';
 import { DealerService } from '../dealer.service';
 import { HttpClient } from '@angular/common/http';
-import { FileUploader, FileSelectDirective } from 'ng2-file-upload/ng2-file-upload';
 
-const URL = 'http://localhost:4000/api/upload';
 
 
 
@@ -32,40 +30,16 @@ const ELEMENT_DATA: PeriodicElement[] = [
 })
 export class CrudInventoryComponent implements OnInit {
 
-  //selectedFile: File
+  selectedFile: File
   cars: CarService[];
   dealers: DealerService[];
   angForm: FormGroup;
-  selectedFile: File = null;
   constructor(private fb: FormBuilder, private cs: CarService, private router: Router, private ds: DealerService, private http: HttpClient) {
     this.createForm();
   }
 
 // IMAGE UPLOAD BOI
-public uploader: FileUploader = new FileUploader({url: URL, itemAlias: 'photo'});
-/*
-ngOnit() {
-  this.uploader.onAfterAddingFile = (file) => {file.withCredentials = false; };
-  this.uploader.onCompleteItem = (item: any, response: any, status: any, headers: any) => {
-    console.log('ImageUpload:uploaded', item, status, response);
-    alert('File uploaded successfully');
-  };
-}*/
-
-
- /* onFileSelected(event) {
-    console.log(event);
-    this.selectedFile = <File>event.target.files[0];
-  }
-  onUpload() {
-    const fd = new FormData();
-    fd.append('image', this.selectedFile, this.selectedFile.name)
-    this.http.post('http://localhost:4000/file-upload', fd)
-      .subscribe(res => {
-        console.log(res);
-      })
-  }*/
-  /*onFileChanged(event) {
+  onFileChanged(event) {
     this.selectedFile = event.target.files[0]
   }
 
@@ -80,7 +54,7 @@ ngOnit() {
     }).subscribe(event => {
       console.log(event);
     });
-  }*/
+  }
 
   createForm() {
     this.angForm = this.fb.group({
@@ -100,13 +74,6 @@ ngOnit() {
 
 
   ngOnInit() {
-    this.uploader.onAfterAddingFile = (file) => {file.withCredentials = false; };
-    this.uploader.onCompleteItem = (item: any, response: any, status: any, headers: any) => {
-      console.log('ImageUpload:uploaded', item, status, response);
-      alert('File uploaded successfully');
-    };
-
-
     this.cs
       .getCar()
       .subscribe((data: CarService[]) => {
@@ -136,6 +103,12 @@ ngOnit() {
  // console.log(ELEMENT_DATA)
   dataSource = this.cars;
 
+}
+export class MyFileUploadComponent {
+  selectedFile: File
+  uri = 'http://localhost:4000/user';
+
+  
 }
 
 
