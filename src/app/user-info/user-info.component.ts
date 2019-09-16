@@ -18,5 +18,17 @@ export class UserInfoComponent implements OnInit {
 
   ngOnInit() {
   }
+  get isManager() {
+    return this.currentUser && this.currentUser.rank == 3;
+}
+get isSalesMan() {
+  return this.currentUser && this.currentUser.rank == 2;
+}
+get isUser() {
+  return this.currentUser && this.currentUser.rank == 1;
+}
+get isBothUM(){
+  return this.currentUser && this.currentUser.rank > 1;
+}
 
 }
