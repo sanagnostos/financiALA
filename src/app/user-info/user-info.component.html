@@ -2,17 +2,22 @@
     <div class="left-info">
         <div class="left-info-header">
             <div class="left-info-header-image">
-                
+                <img *ngIf="isManager" src="/assets/images/ManagerIcon.png">
+                <img *ngIf="isUser" src="/assets/images/UserIcon.png">
+                <img *ngIf="isSalesMan" src="/assets/images/SalesmanIcon.png">
+
             </div>
+            <!--<div *ngIf="isUser"class="left-info-header-image">
+                <img src="/assets/images/UserIcon.png">
+            </div>-->
             <div class="left-info-header-title">
                 
             </div>
         </div>
         <div class="left-info-content">
-            First Name - {{currentUser.first_name}},
-                Last Name - {{currentUser.last_name}},
-                Email - {{currentUser.email}},
-                Location {{currentUser.location}}
+            First Name : {{currentUser.first_name}}<br />
+            Last Name : {{currentUser.last_name}}<br />
+            Email : {{currentUser.email}}
         </div>
     </div>
     <div class="info-main-content">
