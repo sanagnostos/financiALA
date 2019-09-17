@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from '../user.service';
 import { HttpClient } from '@angular/common/http';
+import { DealerService } from '../dealer.service';
+import { FormGroup,  FormBuilder,  Validators } from '@angular/forms';
+
 
 @Component({
   selector: 'app-salesman-promo',
@@ -9,10 +12,29 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./salesman-promo.component.css']
 })
 export class SalesmanPromoComponent implements OnInit {
+  dealers: DealerService[];
 
-  constructor(private us: UserService, private router: Router, private http: HttpClient) {
+  angForm: FormGroup;
+  constructor(private us: UserService, private router: Router, private http: HttpClient, private ds: DealerService, private fb: FormBuilder) {
+    this.createForm()
   }
+  createForm() {
+    this.angForm = this.fb.group({
+      first_name: ['', Validators.required ],
+      last_name: ['', Validators.required ],
+      email: ['', Validators.required ],
+      password: ['', Validators.required ],
+      rank: [''],
+      location: ['']
 
+
+    });
+  }
+  addUser(first_name, last_name, email, password, rank, location) {
+    this.us.addUser(first_name, last_name, email, password, rank, location)
+    this.createForm()
+    this.ngOnInit()
+  }
   users: UserService[];
 
   promote(id, name) {
@@ -32,6 +54,12 @@ export class SalesmanPromoComponent implements OnInit {
       this.users = data;
       console.log(this.users)
     })
+    this.ds
+      .getDealer()
+      .subscribe((data: DealerService[]) => {
+        this.dealers = data;
+        console.log(this.dealers)
+      })
   }
 
 }

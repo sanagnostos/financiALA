@@ -28,5 +28,82 @@
         </table>
 
     </div>
+    <div id="wrapper">
+        <div class="card-1">
+          <div class="card-body">
+      
+    <h1 align="center">Register A New Salesman</h1>
+    <form [formGroup]="angForm" novalidate>
+        <div class="form-group">
+            <label class="col-md-4">First Name:</label>
+            <input type="text" class="form-control" formControlName="first_name" #first_name>
+          </div>
+          <div *ngIf="angForm.controls['first_name'].invalid && (angForm.controls['first_name'].dirty || angForm.controls['first_name'].touched)" class="alert alert-danger">
+            <div *ngIf="angForm.controls['first_name'].errors.required">
+                First Name is required.
+            </div>
+          </div>
+          <div class="form-group">
+              <label class="form-group">Last Name:</label>
+              <input type="text" class="form-control" formControlName="last_name" #last_name>
+          </div>  
+          <div *ngIf="angForm.controls['last_name'].invalid && (angForm.controls['last_name'].dirty || angForm.controls['last_name'].touched)" class="alert alert-danger">
+              <div *ngIf="angForm.controls['last_name'].errors.required">
+                  Last Name is required.
+              </div>
+            </div>
+  
+          <div class="form-group">
+            <label class="form-group">Email:</label>
+            <input type="email" class="form-control" formControlName="email" #email>
+          </div>
+          <div *ngIf="angForm.controls['email'].invalid && (angForm.controls['email'].dirty || angForm.controls['email'].touched)" class="alert alert-danger">
+              <div *ngIf="angForm.controls['email'].errors.required">
+                  Email is required.
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-group">Location:</label>
+              <select class="form-control" formControlName="location" #location > 
+              <option *ngFor="let dealer of dealers" value={{dealer._id}}>
+                {{dealer.name}}, {{dealer.location}}
+              </option>
+              </select>
+            </div> 
+
+
+          <div class="form-group">
+            <label class="form-group">Password:</label>
+            <input type="password" class="form-control" formControlName="password" #password>
+          </div>
+          <div *ngIf="angForm.controls['password'].invalid && (angForm.controls['password'].dirty || angForm.controls['password'].touched)" class="alert alert-danger">
+              <div *ngIf="angForm.controls['password'].errors.required">
+                  Password is required.
+              </div>
+            </div>
+
+
+            <input id="rank" name="rank" type="hidden" value=2 id="rank" #rank>
+
+            
+            <br>
+
+          <div class="form-group">
+            <button (click)="addUser(first_name.value, last_name.value, email.value, password.value, rank.value, location.value)"
+                [disabled]="angForm.pristine || angForm.invalid" 
+                class="btn btn-primary">
+                Register
+              </button>
+              
+        </div>
+            
+    </form>
+</div>
+</div>
+
+
+
+</div>
 
 </div>
