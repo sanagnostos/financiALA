@@ -1,3 +1,26 @@
 <div id="wrapper">
-<p>about works!</p>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <td>ID</td>
+                <td>First Name</td>
+                <td>Last Name</td>
+                <td>Email</td>
+              
+                
+             
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users">
+
+                <td *ngIf="user.rank == 3">{{ user._id }}</td>
+                <td *ngIf="user.rank == 3">{{ user.first_name }}</td>
+                <td *ngIf="user.rank == 3">{{ user.last_name }}</td>
+                <td *ngIf="user.rank == 3">{{ user.email }}</td>
+              
+                
+            </tr>
+        </tbody>
+    </table>
 </div>
