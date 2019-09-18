@@ -33,14 +33,14 @@ export class LoginService {
       if(res['status'] == true) {
         console.log(res)
         console.log(obj.email + " is logged in")
-        alert("Log in " + res['status'])
+        alert("Successfully logged in!")
         this.router.navigateByUrl('/')
         this.currentUserSubject.next(res['user'])
        //this.router.navigate(['/home', obj.email])
       } 
 
       else {
-        alert("log in fail: " + res['status'])
+        alert("Username or password is incorrect")
 
     //    document.getElementById("error").innerText = "Log In Fail";
         console.log("Log in fail");
