@@ -40,3 +40,12 @@ img{
 .block{
   width:29%;
 }
+.mat-raised-button{
+  text-align: center;
+  width: 100%;
+  background-color: red;
+  color: white;
+}
+#wrapper{
+  height: 1000px;
+}

@@ -1,3 +1,6 @@
+#wrapper{
+  height: 1000px;
+}
 
 mat-slider {
     width: 200px;
@@ -29,4 +32,9 @@ mat-slider {
 .texta{
     text-align: center;
     margin: 0 auto;
+}
+.mat-list-item-content{
+  text-align: center;
+  justify-content: center;
+  align-items: center;
 }

@@ -2,9 +2,9 @@
     <div class="left-info">
         <div class="left-info-header">
             <div class="left-info-header-image">
-                <img *ngIf="isManager" src="/assets/images/ManagerIcon.png">
-                <img *ngIf="isUser" src="/assets/images/UserIcon.png">
-                <img *ngIf="isSalesMan" src="/assets/images/SalesmanIcon.png">
+                <img height="200px" width="200px" *ngIf="isManager" src="/assets/images/ManagerIcon.png">
+                <img height="200px" width="200px"  *ngIf="isUser" src="/assets/images/UserIcon.png">
+                <img height="200px" width="200px"  *ngIf="isSalesMan" src="/assets/images/SalesmanIcon.png">
 
             </div>
             <!--<div *ngIf="isUser"class="left-info-header-image">
@@ -17,58 +17,31 @@
         <div class="left-info-content">
             First Name : {{currentUser.first_name}}<br />
             Last Name : {{currentUser.last_name}}<br />
-            Email : {{currentUser.email}}<br>
+            Email : {{currentUser.email}}<br><br>
             <a [routerLink]="['/edituser', currentUser._id]" ><button class="btn btn-primary">Edit Information</button></a>
         </div>
         
     </div>
     <div class="info-main-content">
-        <div class="info-main-content-header" >
-     <!--       <table class="table table-hover">
-                <thead>
-                <tr>
-                    <td>Year</td>
-                    <td>Make</td>
-                    <td>Model</td>
-                    <td>Dealership</td>
-                    <td>Price</td>
-                </tr>
-                </thead>
-              
-                <tbody>
-                    <tr *ngFor="let car of cars">
-                        <td>{{ car.year }}</td>
-                        <td>{{ car.make }}</td>
-                        <td>{{ car.model }}</td>
-                        <td>{{ car.dealer }}</td>
-                        <td>{{ car.price }}</td>
-                    </tr>
-                </tbody>
-              </table>-->
-        
+
         <ul class="mdc-image-list my-image-list" >
             <!-- each li will be generated based on the data pulled from the car api -->
                 <li class="mdc-image-list__item" *ngFor="let car of cars" >
-                   <!-- <a href="/loggedF/{{car._id}}">--><div class="mdc-image-list__image-aspect-container"  > 
-                   <!--     <img class="mdc-image-list__image" src="/assets/images/kinky.jpg">-->
+                    <div class="mdc-image-list__image-aspect-container"  > 
                         <img class="med-image-list__image" height=170 width=210 src="/assets/images/{{car.model}}.jpg">
-                        <!--<img class="med-image-list__image" src="/assets/images/m3.jpg">-->
-                        <span class="mdc-image-list__label">{{car.year}} {{car.make}}, {{car.model}}<br>
-                            {{car.dealer}} - ${{car.price}}
-                            </span>
+
                             
                     </div><!--</a>-->
                     <div class="mdc-image-list__supporting">
                         
-                        
+                            <span class="mdc-image-list__label">{{car.year}} {{car.make}}, {{car.model}}<br>
+                                {{car.dealer}} - ${{car.price}}
+                                </span>
                     </div>
                 </li>
     
     
             </ul>
-        </div>
-        <div class="info-main-content-tiles">
-            
-        </div>
+
     </div>
 </div>

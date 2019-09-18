@@ -1,7 +1,7 @@
 
 <mat-toolbar>
     <div style="position:absolute; right:0%">
-        <p [hidden]="isAll" style="color:white">Sign-In to recieve our great Deals!</p>
+        <p [hidden]="isAll" style="color:white; float: left;">Sign-In to be able to sign up for our newsletter!</p>
         <input *ngIf="currentUser"type="text" [(ngModel)]='mail' name="email"> <button *ngIf="currentUser" mat-button (click)="sendEmail()">Click to subscribe and stay up to date on the latest FinanciALA news!</button>
         <img src="/assets/images/instagram.png">
         <img src="/assets/images/Twitter.png">

@@ -1,0 +1,20 @@
+#tablediv{
+    background-color: lightgray;
+}
+
+#imagediv{
+    height: 35%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    
+}
+
+#words{
+    color:white;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    text-align: center;
+    min-height: 10px;
+    width: 100%;
+
+}

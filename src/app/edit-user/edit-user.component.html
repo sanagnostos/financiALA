@@ -1,3 +1,4 @@
+<div id="wrapper">
 <div class="card">
     <div class="card-body">
         <form [formGroup]="angForm" novalidate>
@@ -59,7 +60,9 @@
             <button (click)="updateUser(first_name.value, last_name.value, email.value, password.value, rank.value, location.value)"
             [disabled]="angForm.invalid" 
             class="btn btn-primary">Submit Update</button>
+            <p> *in order to see the changes on your profile, log out and log back in</p>
         </div>
         </form>
     </div>
+</div>
 </div>
