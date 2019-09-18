@@ -56,7 +56,7 @@
     
             <br ><br >
             Cost:
-    <mat-slider id="slider" name ="sldier"thumbLabel [displayWith]="formatLabel" tickInterval="1" min="0" max="500000" formControlName="SliderN" value={{car.price}}></mat-slider><br> 
+    <mat-slider id="slider" name ="sldier"thumbLabel [displayWith]="formatLabel" tickInterval="1" min="0" max="100000" formControlName="SliderN" value={{car.price}}></mat-slider><br> 
     <br><br>
         Monthly Payment:<input class="form-control" type="text" [value]="A | number:'1.0-0'" disabled>
         Interest Rate:<input class="form-control" type="text" [value]="apr" disabled >
