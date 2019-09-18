@@ -18,8 +18,8 @@ loginRoute.route('/LogIn').post(function (req, res) {
                 "status": true,
             "user":doc})
         } else {
-            req.session.user = doc;
-            res.status(401).json({
+       //     req.session.user = doc;
+            res.status(200).json({
                 "status": false})
         }
 

@@ -7,6 +7,7 @@ import { map } from 'rxjs/operators';
 
 
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -29,18 +30,21 @@ export class LoginService {
     console.log(obj);
     this.http.post(`${this.uri}/login`, obj)
     .subscribe(res => {
-      if(res['status']) {
+      if(res['status'] == true) {
         console.log(res)
         console.log(obj.email + " is logged in")
         alert("Log in " + res['status'])
         this.router.navigateByUrl('/')
         this.currentUserSubject.next(res['user'])
        //this.router.navigate(['/home', obj.email])
-      } else {
-        document.getElementById("error").innerText = "Log In Fail";
+      } 
+
+      else {
+        alert("log in fail: " + res['status'])
+
+    //    document.getElementById("error").innerText = "Log In Fail";
         console.log("Log in fail");
         console.log(res)
-        alert("log in fail: " + res['status'])
       }
     })
   }
