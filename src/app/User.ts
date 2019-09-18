@@ -4,5 +4,12 @@ export default class RegisterModel {
     email: String;
     password: String;
     rank: Number;
+    saved: [{
+        make: String,
+        model: String,
+        year: String,
+        dealer: String,
+        price: Number
+    }];
     location: Number;
 }

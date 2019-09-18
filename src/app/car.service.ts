@@ -1,16 +1,23 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class CarService {
-
+  private currentCarSubject: BehaviorSubject<any>;
+  public currentCar: Observable<any>;
   uri = 'http://localhost:4000/car';
 
-  constructor(private http: HttpClient, private router: Router) { }
+  constructor(private http: HttpClient, private router: Router) { 
+    this.currentCarSubject = new BehaviorSubject<any>(JSON.parse(localStorage.getItem('currentCar')));
+    this.currentCar = this.currentCarSubject.asObservable();
+  }
+//    this.currentUserSubject = new BehaviorSubject<any>(JSON.parse(localStorage.getItem('currentUser')));
+//        this.currentUser = this.currentUserSubject.asObservable();
 
   addCar(make, model, year, dealer, price) {
     const obj = {
@@ -30,6 +37,11 @@ export class CarService {
     return this
       .http
       .get(`${this.uri}`);
+  }
+  getCarDealer(dealerid) {
+    return this
+      .http
+      .get(`${this.uri}/get/${dealerid}`);
   }
   deleteCar(id) {
     return this
