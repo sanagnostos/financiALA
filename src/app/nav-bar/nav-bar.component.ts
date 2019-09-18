@@ -26,6 +26,9 @@ get isUser() {
 get isBothUM(){
   return this.currentUser && this.currentUser.rank > 1;
 }
+get isAll(){
+  return this.currentUser && this.currentUser.rank > 0;
+}
 logout(){
   this.loginservice.logout();
   //this.router.navigateByUrl('/loggedF')
