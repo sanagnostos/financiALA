@@ -17,8 +17,10 @@
         <div class="left-info-content">
             First Name : {{currentUser.first_name}}<br />
             Last Name : {{currentUser.last_name}}<br />
-            Email : {{currentUser.email}}
+            Email : {{currentUser.email}}<br>
+            <a [routerLink]="['/edituser', currentUser._id]" ><button class="btn btn-primary">Edit Information</button></a>
         </div>
+        
     </div>
     <div class="info-main-content">
         <div class="info-main-content-header" >

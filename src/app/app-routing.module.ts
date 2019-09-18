@@ -15,7 +15,7 @@ import { EditCarComponent } from './edit-car/edit-car.component';
 import { SalesmanPromoComponent } from './salesman-promo/salesman-promo.component'
 import { DealershipInfoComponent } from './dealership-info/dealership-info.component';
 import { UserInfoComponent } from './user-info/user-info.component';
-
+import { EditUserComponent } from './edit-user/edit-user.component';
 
 const routes: Routes = [{
   path: '',
@@ -57,6 +57,10 @@ const routes: Routes = [{
 {
   path: 'edit/:id',
   component: EditCarComponent
+},
+{
+  path: 'edituser/:id',
+  component: EditUserComponent
 },
 {
   path:"home",

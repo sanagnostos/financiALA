@@ -32,6 +32,8 @@ import { SalesmanPromoComponent } from './salesman-promo/salesman-promo.componen
 import { DealershipInfoComponent } from './dealership-info/dealership-info.component';
 import { UserInfoComponent } from './user-info/user-info.component';
 import { FileSelectDirective } from 'ng2-file-upload';
+import { EditUserComponent } from './edit-user/edit-user.component';
+
 
 
 
@@ -56,7 +58,8 @@ import { FileSelectDirective } from 'ng2-file-upload';
     DealershipInfoComponent,
     UserInfoComponent,
     SalesmanPromoComponent,
-    FileSelectDirective
+    FileSelectDirective,
+    EditUserComponent
   ],
   imports: [
     BrowserModule,

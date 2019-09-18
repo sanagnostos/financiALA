@@ -32,8 +32,9 @@ userRoutes.route('/edit/:id').get(function (req, res) {
   });
   
   //  Defined update route
+  
 userRoutes.route('/update/:id').post(function (req, res) {
-      User.findById(req.params.id, function(err, next, user) {
+      User.findById(req.params.id, function(err, user) {
       if (!user)
         return next(new Error('Could not load Document'));
       else {
@@ -42,7 +43,7 @@ userRoutes.route('/update/:id').post(function (req, res) {
           user.email = req.body.email;
           user.password = req.body.password;
           user.rank = req.body.rank;
-          user.save = req.body.save;
+        //  user.save = req.body.save;
           user.location = req.body.location
   
           user.save().then(user => {
@@ -53,7 +54,29 @@ userRoutes.route('/update/:id').post(function (req, res) {
         });
       }
     });
+  });/*
+  userRoutes.route('/update/:id').post(function (req, res) {
+    User.findById(req.params.id, function(err, user) {
+    if (!user)
+      return next(new Error('Could not load Document'));
+    else {
+        user.first_name = req.body.first_name;
+        user.last_name = req.body.last_name;
+        user.email = req.body.email;
+        user.password = req.body.password;
+        user.rank = req.body.rank;
+        user.save = req.body.save;
+        user.location = req.body.location
+
+        user.save().then(user => {
+          res.json('Update complete');
+      })
+      .catch(err => {
+            res.status(400).send("unable to update the database");
+      });
+    }
   });
+});*/
   userRoutes.route('/updateRank3/:id').post(function(req, res) {
       console.log("updating this")
       User.update({'_id':req.body.id}, {$set: {rank: 3}}, {w:1}, function(err, result) {

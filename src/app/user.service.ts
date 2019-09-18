@@ -66,4 +66,24 @@ export class UserService {
     this.http.post(`${this.uri}/savecar/${obj.user_id}&${this.car}`, obj)
     .subscribe(res => console.log('Done'));
   }
+  editUser(id) {
+    return this
+            .http
+            .get(`${this.uri}/edit/${id}`);
+  }
+  updateUser(first_name, last_name, email, password, rank, location, id) {
+    const obj = {
+      first_name: first_name,
+      last_name: last_name, 
+      email: email,
+      password: password,
+      rank: rank,
+      location: location
+    };
+    this
+        .http
+        .post(`${this.uri}/update/${id}`, obj)
+        .subscribe(res => console.log('Done'));
+  } 
+
 }
