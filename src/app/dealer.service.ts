@@ -36,4 +36,7 @@ export class DealerService {
   getDealer() {
     return this.http.get(`${this.uri}`);
   }
+  getName(id) {
+    return this.http.get(`${this.uri}/edit/${id}`)
+  }
 }

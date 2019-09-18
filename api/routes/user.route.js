@@ -42,6 +42,7 @@ userRoutes.route('/update/:id').post(function (req, res) {
           user.email = req.body.email;
           user.password = req.body.password;
           user.rank = req.body.rank;
+          user.save = req.body.save;
           user.location = req.body.location
   
           user.save().then(user => {
@@ -69,6 +70,12 @@ userRoutes.route('/update/:id').post(function (req, res) {
   userRoutes.route('/demote/:id').post(function(req, res) {
     console.log("demoted this")
     User.update({'_id':req.body.id}, {$set: {rank: 1}}, {w:1}, function(err, result) {
+        console.log(result);
+    });
+  });
+  userRoutes.route('/savecar/:id&:car').post(function(req, res) {
+    console.log("saved this: " + req.body.id)
+    User.update({'_id':req.body.id}, {$set: {saved: req.body.car}}, {w:1}, function(err, result) {
         console.log(result);
     });
   });

@@ -16,7 +16,15 @@ let User = new Schema({
     },
     rank: {
         type: Number
-    },
+    },/*
+    saved: [{
+        make: String,
+        model: String,
+        year: String,
+        dealer: String,
+        price: Number
+    }],*/
+    saved: [],
     location: {
         type: String
     }

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CarService } from '../car.service';
+import { UserService } from '../user.service';
+import { LoginService } from '../login.service';
 
 @Component({
   selector: 'app-cars',
@@ -9,8 +11,13 @@ import { CarService } from '../car.service';
 })
 export class CarsComponent implements OnInit {
   cars: CarService[];
+  currentUser: any
 
-  constructor(private cs: CarService, private router: Router) { }
+  constructor(private cs: CarService, private router: Router, private us: UserService, private loginservice: LoginService) {
+    this.loginservice.currentUser.subscribe(x => this.currentUser = x);
+
+
+   }
 
   ngOnInit() {
     this.cs
@@ -22,5 +29,10 @@ export class CarsComponent implements OnInit {
       })
 
   }
+  save_car(carid) {
 
+    console.log("user id" + this.currentUser._id + " car id: " + carid)
+    this.us.save_car(this.currentUser._id, carid)
+    console.log('Saved car' + carid)
+  }
 }

@@ -24,6 +24,19 @@ carRoutes.route('/').get(function (req, res) {
         }
     })
 })
+carRoutes.route('/get/:id').get(function (req, res) {
+    Car.find( { $where: function () {
+        console.log(cars.dealer)
+        return(hex_md5(cars.dealer) == req.params.id)
+     //   res.json(cars.dealer)
+    }})});
+
+/*
+db.players.find( { $where: function() {
+   return (hex_md5(this.name) == "9b53e667f30cd329dca1ec9e6a83e994")
+} } );
+
+*/
 carRoutes.route('/edit/:id').get(function (req, res) {
     let id = req.params.id;
     Car.findById(id, function (err, car){

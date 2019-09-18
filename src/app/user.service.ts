@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { CarService } from './car.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -7,10 +9,13 @@ import { HttpClient } from '@angular/common/http';
 export class UserService {
 
   uri = 'http://localhost:4000/user';
+  uri1 = 'http://localhost:4000/car';
+  car: any = {};
 
-  constructor(private http: HttpClient) { }
 
-  addUser(first_name, last_name, email, password, rank, location) {
+  constructor(private http: HttpClient, private cs: CarService, private route: ActivatedRoute, private router: Router ) { }
+
+  addUser(first_name, last_name, email, password, rank, saved, location) {
     
     const obj = {
       first_name: first_name,
@@ -18,6 +23,7 @@ export class UserService {
       email: email,
       password: password,
       rank: rank,
+      saved: saved,
       location: location
     };
     console.log(obj);
@@ -43,6 +49,21 @@ export class UserService {
       id: id
     };
     this.http.post(`${this.uri}/demote/${obj.id}`, obj)
+    .subscribe(res => console.log('Done'));
+  }
+  save_car(userid, carid) {
+    this.route.params.subscribe(params => {
+      this.cs.editCar(params['carid']).subscribe(res => {
+        this.car = res;
+      });
+    });
+
+
+    const obj = {
+      user_id: userid,
+      car_id: carid
+    };
+    this.http.post(`${this.uri}/savecar/${obj.user_id}&${this.car}`, obj)
     .subscribe(res => console.log('Done'));
   }
 }
