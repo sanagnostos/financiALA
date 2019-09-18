@@ -1,26 +1,41 @@
 <div id="wrapper">
-    <table class="table table-hover">
-        <thead>
-            <tr>
-                <td>ID</td>
-                <td>First Name</td>
-                <td>Last Name</td>
-                <td>Email</td>
-              
-                
-             
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let user of users">
 
-                <td *ngIf="user.rank == 3">{{ user._id }}</td>
-                <td *ngIf="user.rank == 3">{{ user.first_name }}</td>
-                <td *ngIf="user.rank == 3">{{ user.last_name }}</td>
-                <td *ngIf="user.rank == 3">{{ user.email }}</td>
-              
+        <div id="imagediv">
+            <img src="/assets/images/MS.jpg" height="500px">
+            </div>
+<div id="words">
+    <h1>
+        Financiala is dedicated to helping you find the right car
+    </h1>
+    <h3>
+        Contact us at financiala@gmail.com or use this page to email a dealer near you!
+    </h3>
+</div>
+
+<div id="tablediv">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <!-- <td>ID</td> -->
+                    <td>First Name</td>
+                    <td>Last Name</td>
+                    <td>Email</td>
+            
+                    
                 
-            </tr>
-        </tbody>
-    </table>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let user of users">
+    
+                    <!-- <td *ngIf="user.rank == 3">{{ user._id }}</td> -->
+                    <td *ngIf="user.rank == 3">{{ user.first_name }}</td>
+                    <td *ngIf="user.rank == 3">{{ user.last_name }}</td>
+                    <td *ngIf="user.rank == 3">{{ user.email }}</td>
+                  
+                    
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>

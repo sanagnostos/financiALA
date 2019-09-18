@@ -2,14 +2,17 @@
     <mat-card class="CardDivL">
         <h1 align="center">Car</h1><br>
         <img height=200 width=280 src="/assets/images/{{car.model}}.jpg"><br><br>
-        <p>$ <input type="text" [(ngModel)] = "car.price"><p><br>
+        <!-- <p>$ <input type="text" [(ngModel)] = "car.price"><p><br> -->
+            <mat-list role="list">
+                    <mat-list-item role="listitem">${{car.price}}</mat-list-item>
+                    </mat-list>
         <mat-divider></mat-divider><br><br>
      <!--   <img src="/assets/images/Twitter.png"><br><br>-->
       
         <mat-list role="list">
-            <mat-list-item role="listitem">{{car.make}}</mat-list-item>
-            <mat-list-item role="listitem">{{car.model}}</mat-list-item>
-            <mat-list-item role="listitem">{{car.dealer}}</mat-list-item>
+            <mat-list-item role="listitem">Make: {{car.make}}</mat-list-item>
+            <mat-list-item role="listitem">Model: {{car.model}}</mat-list-item>
+            <mat-list-item role="listitem">Dealer: {{car.dealer}}</mat-list-item>
           </mat-list>
           
     </mat-card>

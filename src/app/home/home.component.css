@@ -1,6 +1,4 @@
-/*Going to need to resize images we use for the banners, using placeholders
-at the moment. Also need to style the background so that it doesnt
-flash white when you press next/previous*/
+
 .picsum-img-wrapper{
     display: flex;
     width: 100%;
@@ -40,7 +38,10 @@ mat-grid-tile{
 
 .tileContent{
     height: 50%;
-    width: 100%;
+    width: 75%;
+    display: flexbox;
+    flex-direction: row;
+    
 }
 
 .mat-grid-tile-footer{

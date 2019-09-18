@@ -37,16 +37,24 @@
         <mat-grid-tile-header>
           <h3>Location</h3>
         </mat-grid-tile-header>
-          <p>tile placeholder for list of locations</p>
+        <!-- <ul>
+          <li *ngFor="let dealer of dealers">
+            <span>{{dealer.name}}, {{dealer.location}}</span>
+          </li>
+        </ul> -->
+          <p style="font-size:22px; text-align: center;    color:white;
+          text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;">Log in or create an account to find a dealership near you!</p>
         <mat-grid-tile-footer>
-          <button mat-raised-button routerLink="/dealership">Location</button>
+          <button mat-raised-button routerLink="/login">Log in</button>
         </mat-grid-tile-footer>
       </mat-grid-tile>
       <mat-grid-tile id="CarTile">
           <mat-grid-tile-header>
               <h3>Browse Cars</h3>
             </mat-grid-tile-header>
-              <p>tile placeholder for saved car slider</p>
+              <div><img src="/assets/images/porsche.jpg" height="300px" width="300px"></div>
+              <div><p style="font-size:22px; text-align: center;     color:white;
+                text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;">View our great selection of cars and pick the perfect one for you!</p></div>
             <mat-grid-tile-footer>
               <button mat-raised-button routerLink="/cars">Cars</button>
             </mat-grid-tile-footer>
@@ -55,7 +63,8 @@
           <mat-grid-tile-header>
               <h3>Finance Calculator</h3>
             </mat-grid-tile-header>
-              <p>Check out our finance calculator!</p>
+              <p style="font-size:22px; text-align: center;     color:white;
+              text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;">Check out our finance calculator!</p>
             <mat-grid-tile-footer>
               <button mat-raised-button routerLink="/finance">Calculator</button>
             </mat-grid-tile-footer>
